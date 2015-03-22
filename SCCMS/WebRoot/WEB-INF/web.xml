@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:applicationContext-base.xml;classpath:applicationContext-dao.xml;classpath:applicationContext-service.xml;</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>JSPSupportServlet</servlet-name>
+    <servlet-class>org.apache.struts2.views.JspSupportServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <listener>
+    <listener-class>
+org.springframework.web.context.ContextLoaderListener
+  	</listener-class>
+  </listener>
+  <listener>
+    <listener-class>
+org.springframework.web.context.request.RequestContextListener
+  	</listener-class>
+  </listener>
+  <listener>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.changh.sccms.listener.SessionListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>hibernateFilter</filter-name>
+    <filter-class>
+     org.springframework.orm.hibernate3.support.OpenSessionInViewFilter
+     </filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>hibernateFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>jspfilter</filter-name>
+    <filter-class>
+    		com.changh.sccms.filter.MyJspFilter					
+    	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>jspfilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>struts2filter</filter-name>
+    <filter-class>
+    		com.changh.sccms.until.MyStrutsFilter					
+    	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

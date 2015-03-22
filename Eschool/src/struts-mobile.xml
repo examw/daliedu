@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="mobile" namespace="/mobile" 
+ 			extends="eschool-default">
+ 		<!-- 检测更新 -->
+		<action name="checkup" class="com.changh.eschool.action.mobile.CheckVersionUpdateAction">
+			<result name="success" type="json">
+			    <param name="root">result</param>
+			</result>
+		</action>
+		<!-- 获得treaty内容 -->
+		<action name="getTreaty" class="com.changh.eschool.action.mobile.GetTreatyAction">
+		    <result name="success" type="json">
+		        content
+		    </result>
+		</action>
+		<!-- 登录 -->
+		<action name="login" class="com.changh.eschool.action.mobile.LoginAction">
+		    <result name="success" type="json">
+			    <param name="root">result</param>
+			</result>
+		</action>
+		<!-- 注册 -->
+		<action name="register" class="com.changh.eschool.action.mobile.RegisterAction">
+		    <result name="success" type="json">
+			    <param name="root">result</param>
+			</result>
+		</action>
+		<!-- 我的课程 -->
+		<action name="myLessons" class="com.changh.eschool.action.mobile.MyLessonsAction">
+		    <result name="success" type="json">
+		        <param name="root">myLesson</param>
+		    </result>
+		</action>
+		<!-- 免费体验 -->
+		<action name="examTree" class="com.changh.eschool.action.exam.TreeAction">
+ 			<result name="success" type="json">
+		        <param name="root">list</param>
+		    </result>
+ 		</action>
+ 		<action name="classGroup" class="com.changh.eschool.action.mobile.ClassGroupAction">
+ 		    <result name="success" type="json">
+		        <param name="root">map</param>
+		    </result>
+ 		</action>
+ 		<action name="findFreeClass" class="com.changh.eschool.action.mobile.FindFreeClassAction">
+ 		    <result name="success" type="json">
+		        <param name="root">map</param>   
+		        </result>
+ 		</action>
+ 		<action name="findGradeOfPkg" class="com.changh.eschool.action.mobile.FindGradeByPkgAction">
+ 		    <result name="success" type="json">
+		        <param name="root">map</param>   
+		        </result>
+ 		</action>
+ 		
+ 		<action name="searchExam" class="com.changh.eschool.action.mobile.SearchExamAction">
+ 		    <result name="success" type="json">
+		        <param name="root">list</param>   
+		        </result>
+ 		</action>
+ 		<!-- <action name="package" class="com.changh.eschool.action.classPackage.ListAction">
+ 			<result name="success" type="json">
+		        <param name="root">p</param>   
+		        </result>
+ 		</action> 
+ 		<action name="examGrade" class="com.changh.eschool.action.classPackage.GradeAction">
+ 			<result name="success" type="json">
+		        <param name="root">e</param>
+		        </result>
+ 		</action> -->
+ 		<!-- 我的习题 -->
+ 		<action name="paperList" class="com.changh.eschool.action.paper.PaperListAction">
+ 		    <result name="success" type="json">
+ 		        <param name="root">paperList</param>
+ 		    </result>
+ 		</action>
+ 		<action name="questionListofPaper" class="com.changh.eschool.action.mobile.QuestionListOfPaperAction">
+ 		    <result name="success" type="json">
+		        <param name="root">list</param>   
+		        </result>
+ 		</action>
+ 		<action name="getPaperXml" class="com.changh.eschool.action.mobile.GetXMLFormatPaper">
+			<result name="success" type="stream">   
+                <param name="contentType">text/xml  
+                </param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">   
+                    filename="${paperId}.xml"  
+                </param>   
+                <param name="bufferSize">1024</param>   
+            </result>  		    
+ 		</action>
+ 		<!-- 问答 -->
+ 		<action name="getGrade" class="com.changh.eschool.action.mobile.GetGradeAction">
+ 		    <result name="success" type="json">
+		        <param name="root">gradeList</param>   
+		        </result>
+ 		</action>
+ 		<action name="getExam" class="com.changh.eschool.action.mobile.GetExamCategoryAction">
+ 		    <result name="success" type="json">
+		        <param name="root">list</param>   
+		        </result>
+ 		</action>
+ 		<action name="MyQuestions" class="com.changh.eschool.action.mobile.MyQuestionListAction">
+ 		    <result name="success" type="json">
+		        <param name="root">list</param>   
+		        </result>
+ 		</action>
+ 		<action name="addQuestion" class="com.changh.eschool.action.mobile.AddQuestionAction">
+ 		    <result name="success" type="json">
+		        <param name="root">ok</param>   
+		        </result>
+ 		</action>
+ 		<!-- 建议 -->
+ 		<action name="addAdvice" class="com.changh.eschool.action.mobile.AddAdviceAction">
+ 		    <result name="success" type="json">
+		        <param name="root">result</param>   
+		        </result>
+ 		</action>
+ 		<action name="adviceList" class="com.changh.eschool.action.mobile.AdviceListAction">
+ 		    <result name="success">/mobile/adviceList.jsp</result>
+ 		</action>
+ 	</package>
+ </struts>

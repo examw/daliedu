@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="system" namespace="/system" 
+ 			extends="json-default">
+ 		<action name="webInfo" class="com.changh.eschool.action.system.WebInfoAction">
+ 				<result name="success">/common/foot.jsp</result>
+ 		</action>
+ 		<action name="cartBottom" class="com.changh.eschool.action.system.WebInfoAction">
+ 				<result name="success">/common/cartBottom.jsp</result>
+ 		</action>
+ 		<action name="onlineCount" class="com.changh.eschool.action.system.GetOnlineCountAction">
+ 				<result name="success" type="json">
+					<param name="root">map</param>
+			</result>
+ 		</action>
+ 	</package>
+ </struts>

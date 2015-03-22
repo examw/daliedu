@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="cart" namespace="/cart" 
+ 			extends="json-default">
+ 		<!-- 购物车列表 -->
+		<action name="cartList" class="com.changh.eschool.action.cart.CartListAction">
+			<result name="success">/cart/cart.jsp</result>
+		</action>
+		<!-- 删除购物车条目 -->
+		<action name="deleteItem" class="com.changh.eschool.action.cart.DeleteAction">
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		<!-- 获得原价优惠价 -->
+		<action name="getPrice" class="com.changh.eschool.action.cart.GetPriceAction">
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		<!-- 清空购物车 -->
+		<action name="removeAll" class="com.changh.eschool.action.cart.RemoveAllAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 从购物车处登录 -->
+		<action name="loginFromCart" class="com.changh.eschool.action.cart.LoginFromCartAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 从购物车处注册 -->
+		<action name="registerFromCart" class="com.changh.eschool.action.cart.RegisterFromCartAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="simpleList" class="com.changh.eschool.action.cart.CartListAction">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="apply" class="com.changh.eschool.action.course.ApplyAction">
+			<result name="success" type="redirectAction">cartList</result>
+		</action>
+ 	</package>
+ </struts>

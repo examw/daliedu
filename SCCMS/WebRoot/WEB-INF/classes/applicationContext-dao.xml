@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<bean id="studentDao" scope="prototype"
+	class="com.changh.sccms.dao.impl.HibernateStuDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="teacherDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateTeacherDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="examCategoryDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateExamCategoryDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="gradeDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateGradeDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="administratorDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateAdministratorDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="expressCompanyDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateExpressCompanyDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="classDetailDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateClassDetailDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="lectureDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateLectureDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="classPackageDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateClassPackageDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="orderDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateOrderDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="itemsDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateItemsDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="sendDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateSendDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="studyCardDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateStudyCardDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="tradeDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateTradeDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="askOrComplainDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateAskOrComplainDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="replyDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateReplyDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="menuDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateMenuDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="examPaperDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateExamPaperDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="examRuleDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateExamRuleDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="examQuestionDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateExamQuestionDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="webInfoDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateWebInfoDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="examQuestionErrorDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateExamQuestionErrorDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="commentDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateCommentDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="newClassDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateNewClassDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="newsDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateNewsDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="lessonCardDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateLessonCardDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	
+	<bean id="rechargeRecordDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateRechargeRecordDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+</beans>

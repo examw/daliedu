@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="main" namespace="/main" 
+ 			extends="json-default">
+ 		<global-results>
+			<result name="error">/error/error.jsp</result> 
+		</global-results>
+		<action name="main" class="com.changh.eschool.action.exam.ExamAction">
+			<result name="success">/main/main.jsp</result>
+		</action>
+		<action name="examTree" class="com.changh.eschool.action.exam.TreeAction">
+ 			<result name="success">/main/exam.jsp</result>
+ 			
+ 		</action> 
+ 		<action name="package" class="com.changh.eschool.action.classPackage.ListAction">
+ 			<result name="success">/main/package.jsp</result>    
+ 		</action> 
+ 		<action name="examGrade" class="com.changh.eschool.action.classPackage.GradeAction">
+ 			<result name="success">/main/grade.jsp</result>
+ 		</action>
+ 		<action name="audition" class="com.changh.eschool.action.classPackage.AuditionAction">
+ 			<result name="success">/main/hdplayer.jsp</result>
+ 			<result name="error">/error/auditionError.jsp</result>
+ 		</action>
+ 		<action name="gradeAudition" class="com.changh.eschool.action.classPackage.AuditionGradeAction">
+ 			<result name="success">/main/hdplayer.jsp</result>
+ 			<result name="error">/error/auditionError.jsp</result>
+ 		</action>
+ 		<!-- 老师 -->
+ 		 <action name="teacherShow" class="com.changh.eschool.action.teacher.TeacherAction">
+			<result name="success">/main/teacher.jsp</result>
+		</action>
+ 		<action name="gradeList" class="com.changh.eschool.action.teacher.AuditionAction">
+			<result name="success">/main/audition.jsp</result>
+		</action>
+		<action name="commentShow" class="com.changh.eschool.action.teacher.CommentAction">
+			<result name="success" type="json">
+				<param name="root">commentCollect</param>
+			</result>
+		</action>
+		<!-- 添加评论 -->
+		<action name="commentAdd" class="com.changh.eschool.action.teacher.addCommentAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 协议 -->
+		<action name="deal" class="com.changh.eschool.action.member.DealAction">
+			<result name="success">/main/deal.jsp</result>
+		</action>
+		<!-- 签订协议 -->
+		<action name="updateStuDeal" class="com.changh.eschool.action.member.UpdateStuDealAction">
+			<result name="success">/memberCenter/member.jsp</result>
+		</action>
+		<!-- 打印协议 -->
+		<action name="printDeal" class="com.changh.eschool.action.member.DealAction">
+			<result name="success">/main/printStuDeal.jsp</result>
+		</action>
+		<action name="classPackageList" class="com.changh.eschool.action.classPackage.ClassPackageAction">
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		
+ 	</package>
+ </struts>

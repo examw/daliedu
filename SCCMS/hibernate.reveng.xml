@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="tbStudent" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Student">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbTeacher" schema="dbo" catalog="ESchoolSystemDB"
+		class="Teacher">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="tbExamCategory" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.ExamCategory">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbGrade" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Grade">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbGradeCategory" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.CradeCategory">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbClassDetail" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.ClassDetail">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbLecture" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Lecture">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbClassPackage" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.ClassPackage">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbPackageCategory" schema="dbo"
+		catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.PackageCategory">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tb_tbClassPackage_tbGrade" schema="dbo"
+		catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.ClassPackageGrade">
+	</table>
+	<table name="tbDeal" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Deal">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbAddress" schema="dbo" catalog="ESchoolSystemDB"
+		class="Address">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="tbTrade" schema="dbo" catalog="ESchoolSystemDB"
+		class="Trade">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="tbStudyRecord" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.StudyRecord">
+	</table>
+	<table name="tbComment" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Comment">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbAskOrComplain" schema="dbo" catalog="ESchoolSystemDB"
+		class="AskOrComlain">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="tbReply" schema="dbo" catalog="ESchoolSystemDB"
+		class="Reply">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="tbStuDeal" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.StuDeal">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+	</table>
+	<table name="tbMenu" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Menu">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="tbExamPaper" schema="dbo" catalog="ESchoolSystemDB"
+		class="ExamPaper">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="tbExamQuestion" schema="dbo" catalog="ESchoolSystemDB"
+		class="ExamQuestion">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="tbExamRule" schema="dbo" catalog="ESchoolSystemDB"
+		class="ExamRule">
+		<table name="tbRole" schema="dbo" catalog="ESchoolSystemDB"
+			class="com.changh.sccms.entity.Role">
+			<primary-key>
+				<generator class="identity"></generator>
+			</primary-key>
+		</table>
+	</table>
+	<table name="tbWebInfo" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.WebInfo">
+		<table name="tbExamRule" schema="dbo" catalog="ESchoolSystemDB"
+			class="ExamRule">
+			<table name="tbRole" schema="dbo" catalog="ESchoolSystemDB"
+				class="com.changh.sccms.entity.Role">
+				<primary-key>
+					<generator class="identity"></generator>
+				</primary-key>
+			</table>
+		</table>
+		<table name="tbExamRecord" schema="dbo"
+			catalog="ESchoolSystemDB" class="ExamRecord">
+			<primary-key>
+				<generator class="native"></generator>
+			</primary-key>
+		</table>
+	</table>
+	<table name="tbQuestionError" schema="dbo" catalog="ESchoolSystemDB"
+		class="ExamQuestionError">
+		<table name="tbLog" schema="dbo" catalog="ESchoolSystemDB"
+			class="com.changh.sccms.entity.Log">
+			<primary-key>
+				<generator class="identity"></generator>
+			</primary-key>
+		</table>
+	</table>
+	<table name="cooperate" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.Cooperate">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="new_class" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.NewClass">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+	<table name="tbNews" schema="dbo" catalog="ESchoolSystemDB"
+		class="com.changh.sccms.entity.News">
+		<primary-key>
+			<generator class="identity"></generator>
+		</primary-key>
+	</table>
+<table name="province" schema="dbo" catalog="ESchoolSystemDB"
+	class="com.changh.sccms.entity.province">
+	<primary-key>
+		<generator class="identity"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>

@@ -1,0 +1,161 @@
+@charset "GB2312";
+
+body { margin:0; padding:0;}
+body { width:100%; height:100%; font-family:"宋体",Arial, Helvetica, sans-serif; font-size:12px; color:#666; line-height:22px;}
+a:link,a:visited { color:#b6afaf; text-decoration:none; }
+a:hover { color:#eee; text-decoration:underline; }
+ul,li {margin:0; padding:0; list-style-type:none; }
+img{border:0; vertical-align:middle; }
+.top{height:60px;background:#ec4f02;}
+.harder{width:1010px;margin:0 auto;}
+.logo{float:left; width:226px; padding-top:15px;}
+.logo2{float:left;padding-left:8px;}
+.nav{width:540px; font-size:14px; height:60px; line-height:60px; float:left;padding-left:35px;}
+.nav ul li{float:left; background:url(navxian.gif) no-repeat left center; padding:0 20px; font-weight:bold;}
+.nav a{font-size:14px;font-family:"微软雅黑";color:#ffffff;}
+.nav a:link,.nav a:actived,.nav a:visited,{color:#ffffff;}
+.login{float:right;padding-top:15px;}
+.fa{font-family:Tahoma, Geneva, sans-serif;}
+.fm{font-family:Microsoft Yahei;}
+.fo{ color:#fe6700;}
+.f18{font-size:18px;}
+.f20{font-size:20px;}
+.f24{font-size:24px;}
+.blackBg{display:inline-block; height:19px; line-height:19px; padding:0px; font-weight:600;}
+.pt10{padding-top:10px;}
+
+
+
+/*content内容部分*/
+#wapper{margin:0px auto; width:100%; margin-top:20px;}
+.cont{width:996px;height:auto;margin:0px auto;border:1px solid #d0d1d1;background:#fff;_overflow:hidden;}
+.bmlc{width:976px;float:left;padding:10px 17px 0px;position:relative;height:auto;background:url(lct.png) no-repeat 0px 0px;margin-top:-12px;margin-left:-7px;}
+.bmlc .lct{width:100%;height:37px;float:left;background:url(lct.png) no-repeat 0px -118px;}
+.bmlc .lct2{background:url(lct.png) no-repeat 0px -77px;}
+.bmlc .lct3{background:url(lct.png) no-repeat 0px -161px;}
+.bmlc .lct4{background:url(lct.png) no-repeat 0px -209px;}
+.bmlc .lct li{width:170px;height:auto;float:left;font-size:16px;line-height:37px;font-family:Microsoft YaHei;padding-left:74px;color:#666;}
+.bmlc .lct li.on{color:#fff;}
+
+.bmqd{width:96%;padding:10px 20px 17px;float:left;height:auto;}
+.bmqd .title{width:100%;height:auto;float:left;background:url(wx-hd.png) repeat-x 0px bottom;margin-top:10px;}
+.bmqd .title .flt{float:left;background:url(wx-hd.png) no-repeat -165px -14px;padding-left:40px;font-family:Microsoft YaHei;font-size:24px;color:#666;border-bottom:3px solid #7bb431;padding-bottom:10px;margin-top:15px;}
+.bmqd .title .flt2{float:left;font-family:Microsoft YaHei;font-size:18px;color:#f60;border-bottom:3px solid #7bb431;padding-bottom:10px;margin-top:10px;}
+
+.bmqd .title .status-wrapper{width:50%;height:auto;float:right;color:#666;font-family:SimSun}
+.bmqd .title .status-wrapper .status-bar{float:right;}
+.bmqd .title .status-wrapper .status-bar span{float:left;padding-left:5px;}
+.bmqd .title .status-wrapper .status-bar .num{border:1px solid #d0d0d0;padding:1px;width:100px;}
+.bmqd .title .status-wrapper .status-bar .num em{float:left;height:8px;background:#7bb431;overflow:hidden;}
+.bmqd .title .status-wrapper .total-fee{width:100%;height:auto;float:right;margin-top:5px;}
+.bmqd .title .status-wrapper .total-fee-info{float:right;padding-right:10px;}
+.bmqd .title .status-wrapper .btn-go{float:right;}
+.bmqd .title .status-wrapper .total-fee em{font-family:Microsoft YaHei;font-style:normal;}
+.bmqd .title .status-wrapper .total2{color:#f30;}
+.bmqd .title .status-wrapper .btn-go{float:right;width:56px;height:21px;background:url(wx-hd.png) no-repeat 0px -84px;text-align:center;color:#fff;line-height:21px;margin-top:2px;font-weight:bold;}
+.f18{font-size:18px;font-weight:bold;font-family:Microsoft YaHei;color:#f30;}
+.f20{font-size:22px;font-weight:bold;font-family:Microsoft YaHei;color:#f30;}
+
+.kclist{ width:100%; height:auto;float:left;margin-top:10px;}
+.kclist ul.s-chk{width:100%;height:auto;float:left;background:url(wx-hd.png) 0px 31px repeat-x;}
+.kclist ul.s-chk li{float:left;color:#333;font-weight: bold;text-align:center;height:32px;line-height:32px;}
+.kclist .b0{width:28px;}
+.kclist .b1{width:540px;padding-left:18px;}
+.kclist .b2{width:120px;}
+.kclist .b3{width:90px;}
+.kclist .b4{width:90px;}
+
+.ca_tab1{width:100%;height:auto;float:left;}
+.ca_tab1 h1{width:100%;height:auto;float:left;font-weight:normal;font-size:12px;margin:0px;padding:10px 0px;}
+.ca_tab1 table{float:left;width:100%;}
+.ca_tab1 td {line-height:20px;padding:8px 0px;color:#555;line-height:21px;color:#999;}
+.ca_tab1 td a{ color:#444; }
+.ca_tab1 td a:hover{ color:#f30; text-decoration:underline}
+.ca_tab1 .s-change{background:#fff;color:#31bf00;font-style:normal;padding:2px 5px;border:1px dashed #31bf00;}
+.tc1{ color:#f30; font-family:Arial;font-weight:bold;font-size:14px;}
+.ca_tab1 strong{font-weight:bold;text-decoration:line-through;}
+.ca_tab1 .del{color:#36c;background:url(wx-hd.png) no-repeat -187px -56px;padding-left:15px;}
+.ca_tab1 td.b0{width:28px;}
+.ca_tab1 td.b1{width:526px;padding-left:12px;}
+.ca_tab1 td.b2{width:120px;}
+.ca_tab1 td.b3{width:85px;}
+.noday7{font-size:14px;}
+
+.conall{width:100%;height:auto;float:left;margin-top:15px;}
+.conall .favorable{float:left;color:#080;line-height:20px;padding:5px 0px;padding-left:5px;width:99%;}
+.conall .total-price{width:99%;height:auto;float:left;border:1px solid #fca700;border-top:1px solid #f84600;background:#ffebcc;padding:4px;}
+.conall .total-price .total{width:99%;float:left;color:#333;background:#fff;text-align:right;padding:10px 10px 10px 0px;}
+.conall .jxxk{background:#fff0d1;border:1px solid #ffd373;float:right;padding:8px 10px;font-size:14px;color:#666;margin-top:10px;}
+.conall .jxxk:hover{border:1px solid #ed4502;color:#f30;}
+.conall .boxlink,.pay .boxlink{float:right;width:122px;height:48px;background:url(wx-hd.png) no-repeat 0px -144px;margin-left:10px;display:inline;font-size:22px;font-family:Microsoft YaHei;color:#fff;line-height:48px;text-align:center;padding:0px;padding-right:30px;border:none;}
+.conall .boxlink:hover,.pay .boxlink:hover{background:url(wx-hd.png) no-repeat 0px -195px;color:#fff;padding:0px;padding-right:30px;border:none;}
+.conall .name-list{float:right;width:100%;padding-bottom:10px;margin-top:10px;}
+.conall .name-list li{float:right;margin-left:10px;display:inline;}
+
+.conall .msg{color:#404040;float:right;margin-top: 10px;width: 100%;}
+.conall .msg span{float:right;background:url(wx-hd.png) no-repeat -185px -86px;padding-left:18px;line-height:18px;}
+
+.bottom{width:100%;color:#444;line-height:24px; padding-bottom:30px; height: auto; font-family:Arial; margin:0px auto; text-align:center; padding-top:15px;background:#fff;color:#666; border-top:1px dotted #ccc;}
+
+/*支付*/
+.ca_tab3 {text-align:center; border-right:1px solid #EAEAEA;float:left;width:100%;}
+.ca_tab3 th {background:url(wx-hd.png) 0px -338px repeat-x;color:#333;font-weight: bold;text-align:center;border:#eaeaea 1px solid;border-bottom:0px;border-right:0px; }
+.ca_tab3 td {line-height:20px;padding:10px 0 6px 0; color:#555; line-height:21px;border-left:#EAEAEA 1px solid;border-bottom:#EAEAEA 1px solid;}
+.ca_tab3 td a{ color:#444; }
+.ca_tab3 td a:hover{ color:#f30; text-decoration:underline}
+
+.total_info{width:97%;height:auto;float:left;background:#f5f5f5;border:1px solid #eaeaea;padding:13px 13px 13px 14px;border-top:none;}
+.total_info .checkout{float:left;font-size:18px;font-weight:bold;}
+.total_info .checkout strong{color:#e30;font-family:Microsoft YaHei;}
+.total_info .row_price{float:right;font-family:Microsoft YaHei;font-size:14px;}
+.total_info .row_price b{color:#f30;}
+.total_info .row_price strong{color:#e30;font-size:22px;}
+
+
+
+/*支付方式切换*/
+.clear{ clear:both; height:0; overflow:hidden;}
+.buyPay{width:96%;height:auto;float:left;padding:10px 15px;}
+.buyPay .buyTit01{margin-bottom:5px;}
+.buyPayTit{height:44px;}
+.buyPayTit li{float:left; font-size:12px; width:141px; text-align:center; height:44px; margin-right:8px; background:url(buyPayTit_bg.png) no-repeat 0px 0px; line-height:34px; cursor:pointer;}
+.buyPayTit li.current{color:#fff; background-position:0px -44px; font-size:14px; font-weight:600;}
+.buyPay_con{ border-top:2px solid #ed540c; padding:10px 15px; margin-top:-10px; }
+.buyPay_con h5{font-size:12px; font-weight:100; padding:8px 0; overflow:hidden;}
+.buyPay_con h5 input{float:left; margin:10px 5px 0 0;}
+/*支付方式切换---------网上支付--------*/
+
+.buyPay_con{ border-top:2px solid #ed540c; padding-top:10px;}
+.buyPay_con h5{font-size:12px; font-weight:100; padding:8px 0; overflow:hidden;}
+.buyPay_con h5 input{float:left; margin:10px 5px 0 0;}
+/*支付方式切换---------网上支付--------*/
+ul.buyB_payPlat{ padding:10px 0 0 20px; overflow:hidden;}
+ul.buyB_payPlat li{ float:left; width:220px; height:55px; vertical-align:middle;}
+ul.buyB_payPlat2 li{  width:290px;}
+ul.buyB_payPlat li input{margin:0; vertical-align:middle;}
+ul.buyB_payPlat li img{margin:0 0 0 7px; vertical-align:middle;}
+ul.buyB_payPlat li.buyB_payPlatNone{display:none;}
+.buyB_icon03{float:left; width:0px; height:0px; overflow:hidden; border-color:#666 #fff #fff #fff; margin:8px 3px 0 0; border-width:5px; border-style:solid;}
+.buyB_icon03_b{float:left; width:0px; height:0px; overflow:hidden; border-color:#fff #fff #666 #fff; margin:4px 3px 0 0; border-width:5px; border-style:solid;}
+.buyB_bankMoreClick1{float:left; padding-top:8px; cursor:pointer;}
+.buyB_bankMoreClick2{float:left; padding-top:8px; cursor:pointer;}
+ul.borderNo{border:none;}
+
+
+/*银行汇款*/
+table.buyB_rechTable{width:850px; margin:5px auto;}
+table.buyB_rechTable tr th{background:#f3f3f3; border-color:#efefef; border-width:1px 0 1px 0; border-style:solid; height:32px; line-height:32px; color:#333; font-weight:600;}
+table.buyB_rechTable tr td{border-bottom:1px solid #efefef; height:auto; padding:8px 0; line-height:16px; vertical-align:middle; text-align:center;}
+table.buyB_rechTable tr td img{margin:0 auto; display:block;}
+table.buyB_rechTable tr td a{text-decoration:underline;}
+table.buyB_rechTable tr td a:hover{text-decoration:none;}
+
+
+/*结算信息*/
+.buySettle{width:96%;padding:10px 20px 17px; text-align:right; overflow:hidden;}
+.buySettle .title{width:100%;height:auto;float:left;background:url(wx-hd.png) repeat-x 0px bottom;margin-top:10px; margin-bottom:10px;}
+.buySettle .title .flt2{float:left;font-family:Microsoft YaHei;font-size:18px;color:#f60;border-bottom:3px solid #7bb431;padding-bottom:10px;margin-top:10px;}
+.blackBg{display:inline-block; height:19px; line-height:19px; padding:0px; font-weight:600;}
+.buySettle span{margin:0px;}
+.buySubmitBox{overflow:hidden;}
+.buySubmit,.buySubmit:hover{width:181px; height:47px; line-height:45px; background:url(buySubBg.jpg) no-repeat; float:right; text-align:center; color:#fffff; text-decoration:none; font-size:24px; font-family:Microsoft YaHei; text-shadow: 0 -1px 1px #666; margin-top:10px;}

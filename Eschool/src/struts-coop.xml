@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="coop" namespace="/coop" 
+ 			extends="json-default">
+		<!-- 删除购物车条目 -->
+		<action name="getStu" class="com.changh.eschool.action.coop.CooperationAction">
+			<result name="success" type="json">
+				<param name="root">j</param>
+			</result>
+		</action>
+ 	</package>
+ </struts>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="question" namespace="/question" 
+ 			extends="eschool-default">
+ 		<!-- 老师登录 -->
+ 		<action name = "teacherLogin" class="com.changh.eschool.action.question.TeacherLoginAction">
+ 			<result name="success" type="json">
+ 				<param name="root">data</param>
+ 			</result>
+ 		</action>
+ 		<action name="teacherLogout" class="com.changh.eschool.action.question.TeacherLogoutAciton">
+ 			<result name="success">/question/teacherLogin.jsp</result>
+ 		</action>
+ 		<!-- 加载某一个问题以及答案 -->
+ 		<action name="loadQuestion" class="com.changh.eschool.action.question.LoadQuestionAction">
+ 			<result name="success">/memberCenter/questionDetail.jsp</result>
+ 		</action>
+ 		<!-- 问题列表 -->
+ 		<action name = "questionList" class="com.changh.eschool.action.question.QuestionListAction">
+ 			<interceptor-ref name="teacherLoginStack"></interceptor-ref>
+ 			<result name="success">/question/questionList.jsp</result>
+ 			<result name="fail">/question/teacherLogin.jsp</result>
+ 		</action>
+ 		<!-- 回答问题1-load -->
+ 		<action name = "loadForAnswer" class="com.changh.eschool.action.question.LoadQuestion2Action">
+ 			<interceptor-ref name="teacherLoginStack"></interceptor-ref>
+ 			<result name="success">/question/answer.jsp</result>
+ 			<result name="fail">/question/teacherLogin.jsp</result>
+ 		</action>
+ 		<!-- 回答问题 2-answer -->
+ 		<action name = "answer" class="com.changh.eschool.action.question.AnswerQuestionAction">
+ 			<interceptor-ref name="teacherLoginStack"></interceptor-ref>
+ 			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 			<result name="fail">/question/teacherLogin.jsp</result>
+ 		</action>
+ 		<!-- 问题搜索的下拉框加载，以后要做成固定数组 -->
+ 		<action name="examTree" class="com.changh.eschool.action.exam.TreeAction">
+ 			<result name="success" type="json"><param name="root">list</param></result>
+ 		</action> 
+ 		<action name="gradeTree" class="com.changh.eschool.action.question.GradeTreeAction">
+ 			<result name="success" type="json"><param name="root">list</param></result>
+ 		</action>
+ 		<!-- 收藏问题  -->
+ 		<action name = "fav" class="com.changh.eschool.action.question.CollectQuestionAction">
+ 			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 		</action>
+ 		<!-- 取消收藏  -->
+ 		<action name = "unfav" class="com.changh.eschool.action.question.CancelCollectAction">
+ 			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 		</action>
+ 		<!-- 当前课程下面的问题 -->
+ 		<action name="classQuestion" class="com.changh.eschool.action.question.ClassQuestionListAction">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		
+ 	</package>
+ </struts>

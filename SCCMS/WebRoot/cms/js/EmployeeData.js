@@ -1,0 +1,1 @@
+﻿var EmployeeData = { Rows: [{ "__status": null, "ID": 1, "DepartmentID": 3, "RealName": "fewf", "DepartmentName": "销售部", "Sex": 1, "Age": 2433, "IncomeDay": new Date(1301356800000), "Phone": "159244332", "Address": "变为不为恶" }],total:1}

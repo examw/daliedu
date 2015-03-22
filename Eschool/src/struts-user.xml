@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="user" namespace="/user" 
+ 			extends="json-default">
+		<!-- 检查用户名 -->
+		<action name="checkUsername" class="com.changh.eschool.action.user.CheckUsernameAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 检查email -->
+		<action name="checkEmail" class="com.changh.eschool.action.user.CheckEmailAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 检查mobilePhone -->
+		<action name="checkMobile" class="com.changh.eschool.action.user.CheckMobilePhoneAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 获取验证码 -->
+    		<action name="getCode" class="com.changh.eschool.action.user.CreateCheckCodeAction">
+    			<result name="success" type="stream">
+    				<param name="inputName">input</param>
+    				<param name="contentType">image/jpeg</param>
+    			</result>
+    	</action>
+		<!-- 检查验证码 -->
+		<action name="checkImage" class="com.changh.eschool.action.user.CheckImageAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 通过用户名获取用户部分信息 -->
+		<action name="getFromUsername" class="com.changh.eschool.action.user.GetFromUsernameAction">
+			<result name="success" type="json">
+ 				<param name="root">data</param>
+ 			</result>
+		</action>
+		<!-- 注册 -->
+		<action name="register" class="com.changh.eschool.action.user.RegisterAction">
+			<result name="success">/user/skip.jsp
+ 			</result>
+		</action>
+		<!-- 登录 -->
+		<action name="login" class="com.changh.eschool.action.user.LoginAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 登录 2-->
+		<action name="stuLogin" class="com.changh.eschool.action.user.StuLoginAction">
+ 			<result type="redirect" name="success">/memberCenter/member.jsp</result>
+ 			<result type="redirect" name="false">/user/login.jsp</result>
+ 		</action>
+		<!-- 退出 -->
+		<action name="loginOut" class="com.changh.eschool.action.user.LoginOutAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+ 		<!-- 发邮件找回密码 -->
+ 		<action name="findPwd" class="com.changh.eschool.action.user.FindPwdAction">
+ 			<result name="success" type="json">
+ 				<param name="root">data</param>
+ 			</result>
+ 		</action>
+ 		<!-- toResetPage -->
+ 		<action name="resetPwd" class="com.changh.eschool.action.user.ToResetPageAction">
+ 			<result name="success">/user/resetPwd.jsp</result>
+ 			<result name="fail">/user/findpwd.jsp</result>
+ 		</action>
+ 				<!-- Reset password -->
+ 		<action name="resetAction" class="com.changh.eschool.action.user.ResetPwdAction">
+ 			<result name="success">/user/skip.jsp</result>
+ 		</action>
+ 		<!-- 获取该用户所有的订单 -->
+ 		<action name="getOrders" class="com.changh.eschool.action.order.OrderListOfStuAction">
+				<result name="success" type="json">
+ 					<param name="root">list</param>
+ 		</result> 
+ 		</action>
+ 		<!-- 获取该用户某订单所有条目 -->
+ 		<action name="getItems" class="com.changh.eschool.action.order.ItemsListAction">
+				<result name="success" type="json">
+ 					<param name="root">list</param>
+ 				</result> 		
+ 		</action>
+ 		<!-- 加载地址-->
+ 		<action name="loadAddr" class="com.changh.eschool.action.user.LoadAddressAction">
+ 			<result name="success" type="json">
+ 				<param name="root">addr</param>
+ 			</result>
+ 		</action>
+ 		<!--获取学生 -->
+ 		<action name="stuSession" class="com.changh.eschool.action.user.StuAction">
+ 			<result name="success" type="json">
+ 				<param name="root">data</param>
+ 			</result>
+ 		</action>
+ 		<!--获取用户名 -->
+ 		<action name="stuName" class="com.changh.eschool.action.user.StuNameAction">
+ 			<result name="success" type="json">
+ 				<param name="root">username</param>
+ 			</result>
+ 		</action>
+ 		<action name="userName" class="com.changh.eschool.action.user.StuNameAction" method="getNameAction">
+ 			<result name="success" type="json">
+ 				<param name="root">name</param>
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 获取短信验证码 -->
+ 		<action name="requestSmsCode" class="com.changh.eschool.action.user.RequestMsgCodeAction">
+ 		    <result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 		</action>
+ 		<!-- 接收发过来的短信验证码 -->
+ 		<action name="getSmsCode" class="com.changh.eschool.action.user.GetMsgCodeAction">
+ 		    <result name="success" type="json">
+ 				<param name="root">data</param>
+ 			</result>
+ 		</action>
+ 		<!-- 验证短信验证码 -->
+ 		<action name="checkSmsCode" class="com.changh.eschool.action.user.CheckMsgCodeAction">
+ 		    <result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 		</action>
+ 		
+ 		<!-- 检测用户是否登录 -->
+ 		<action name="checkStu" class="com.changh.eschool.action.user.CheckUserAction">
+ 		    <result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 	</package>
+ </struts>

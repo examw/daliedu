@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>网校！</title>
+<META name="ROBOTS" content="All" />
+<link rel="stylesheet" type="text/css" href="images/index.css">
+<script type="text/javascript" src="images//jquery.js"></script>
+<script language="javascript">
+var currentindex=1;//flash图片参数
+function changeflash(i) {
+	currentindex=i;
+	for (j=1;j<=6;j++){//此处的5代表你想要添加的幻灯片的数量与下面的5相呼应
+		if (j==i) 
+{
+			$("#flash"+j).fadeIn("normal");
+			$("#flash"+j).css("display","block");
+			$("#f"+j).removeClass();
+			$("#f"+j).addClass("dq");
+			$("#flashBg").css("background-color",$("#flash"+j).attr("name"));
+		}
+		else{
+			$("#flash"+j).css("display","none");
+			$("#f"+j).removeClass();
+			$("#f"+j).addClass("no");
+		}
+	}
+}
+function startAm(){
+	timerID = setInterval("timer_tick()",3000);//3000代表间隔时间设置
+
+}
+
+function stopAm(){
+	clearInterval(timerID);
+}
+function timer_tick() {
+	currentindex=currentindex>=5?1:currentindex+1;//此处的5代表幻灯片循环遍历的次数
+	changeflash(currentindex);
+}
+
+</script>
+</head>
+<body>
+<div class="top">
+  <div class="harder">
+    <div class="logo"><a href=""><img src="images/logo.png" alt="雄鹰网校"/></a></div>
+    <div class="nav">
+      <ul>
+        <li style="background:none;"><a href="wangxiao/zcyy/" target="_blank">职称英语</a></li>
+        <li><a href="wangxiao/bgy/" target="_blank">报关员</a></li>
+        <li><a href="wangxiao/bjy/" target="_blank">报检员</a></li>
+        <li><a href="wangxiao/jjs/" target="_blank">经济师</a></li>
+        <li><a href="wangxiao/zhongkao/" target="_blank">中考</a></li>
+        <li><a href="wangxiao/gaokao/" target="_blank">高考</a></li>
+      </ul>
+    </div>
+    <div class="login"> <a href="" target="_blank"><img src="images/zhuce.gif"/></a> 　<a href="" target="_blank"><img src="images/denglu.gif"/></a> </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="main">
+
+<div id="flashBg">
+      <div id="flash"> 
+	  <a name="#082841"  style="display:block" id="flash1"  target="_blank" href="/cuxiao/NewYear/"><img src="images/1.jpg"></a>
+	  <a name="#082841"  id="flash2"  target="_blank" href="/app/"><img src="images/2.jpg"></a>
+	  <a name="#082841"  id="flash3"  target="_blank" href="/xxkc/"><img src="images/3.jpg"></a>
+      <a name="#6b9a7a"  id="flash4" target="_blank" href="/MobileSpread/"><img src="images/4.jpg"></a> 
+      <a name="#082841"  id="flash5" target="_blank" href="/2012cuxiao/wyhd/"><img src="images/5.jpg"></a>
+      <a name="#082841"  id="flash6" target="_blank" href="/jzs1/"><img src="images/6.jpg"></a> 
+        <div class="flash_bar">
+          <div class="dq"  id="f1" onMouseMove="changeflash(1)">1</div>
+          <div class="no"  id="f2" onMouseMove="changeflash(2)">2</div>
+          <div class="no"  id="f3" onMouseMove="changeflash(3)">3</div>
+          <div class="no"  id="f4" onMouseMove="changeflash(4)">4</div>
+          <div class="no"  id="f5" onMouseMove="changeflash(5)">5</div>
+          <div class="no"  id="f6" onMouseMove="changeflash(6)">6</div>
+        </div>
+      </div>
+  </div>
+  <div id="cu3er_swf"></div>
+  
+  <div class="root"> <a href="wangxiao/zcyy/" target="_blank"><img src="images/navlo01.png" border="0" /></a> <a href="wangxiao/bgy/" target="_blank"><img src="images/navlo02.png" /></a> <a class="rootright" href="wangxiao/jjs/" target="_blank"><img src="images/navlo04.png" /></a>
+  <div style="clear:both;"></div>
+  <a href="wangxiao/bjy/" target="_blank"><img src="images/navlo03.png" /></a>  <a href="wangxiao/zhongkao/" target="_blank"><img src="images/navlo05.png" /></a> <a href="wangxiao/gaokao/" target="_blank" class="rootright"><img src="images/navlo06.png" /></a>
+  <div style="clear:both;"></div>
+  </div>
+</div>
+<div class="main">
+  <div class="kctext"><img src="images/kctext.jpg" /></div>
+  <div class="kccon">
+    <ul>
+      <li>
+        <div class="kcb1"><a href="" target="_blank">工程类考试</a></div>
+        <div class="kcb2"><div style="float:left"><a href="javascript:return false;" onclick="Tanchu('一级建造师','yijianvip/')">一级建造师</a>　|　<a href="javascript:return false;" onclick="Tanchu('二级建造师','erjianfd/')">二级建造师</a>　|　<a href="javascript:return false;" onclick="Tanchu('造价工程师','zaojiavip/')">造价工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('造价员','zjyfudao/')">造价员</a>　|　<a href="javascript:return false;" onclick="Tanchu('监理工程师','jianlivip/')">监理工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('咨询工程师','zixunfd/')">咨询工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('房地产估价师','fdcgjsvip/')">房地产估价师</a>　|　<a href="javascript:return false;" onclick="Tanchu('质量工程师','zlgchqvip/')">质量工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('结构工程师','jiegoufudao/')">结构工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('土地估价师','gujiashifd2010/')">土地估价师</a>　　</div><div onmousemove="onMous('id8')" onmouseout="onOver('id8')" style="position:relative;z-index:2;float:right;"><a href="" title="更多>>" style="color:#f63;">更多>></a><div class="gcglsw" id=id8 >
+             
+          <div class="gcglsw3">
+            <a href="javascript:return false;" onclick="Tanchu('安全工程师','anquanfudao/')">安全工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('招标师','zbsfd2011/')">招标师</a>　|　<a href="javascript:return false;" onclick="Tanchu('物业管理师','wuyefudao/')">物业管理师</a>　|　<a href="javascript:return false;" onclick="Tanchu('注册测绘师','cehuifd/')">注册测绘师</a>　|　<a href="javascript:return false;" onclick="Tanchu('电气工程师','dianqifudao/')">电气工程师</a>　|　<a href="javascript:return false;" onclick="Tanchu('化工工程师','huagongshifudao/')">化工工程师</a><br /><a href="javascript:return false;" onclick="Tanchu('设备监理师','shebeifudao2010/')">设备监理师</a>　|　<a href="javascript:return false;" onclick="Tanchu('建筑师','jianzhufudao/')">建筑师</a>　|　<a href="javascript:return false;" onclick="Tanchu('房产经纪人','fdcjingjiren2011/')">房产经纪人</a>　|　<a href="javascript:return false;" onclick="Tanchu('注册计量师','jlsfudao/')">注册计量师</a>　|　<a href="javascript:return false;" onclick="Tanchu('土地代理人','tudifudao/')">土地代理人</a>　|　<a href="javascript:return false;" onclick="Tanchu('环保工程师','huanbaofd/')">环保工程师</a><br />
+        <a href="javascript:return false;" onclick="Tanchu('城市规划师','guihuafudao/')">城市规划师</a>　|　<a href="javascript:return false;" onclick="Tanchu('岩土师','yantufd/')">岩土师</a>　|　<a href="javascript:return false;" onclick="Tanchu('公路监理师','gljianlifudao/')">公路监理师</a>　|　<a href="javascript:return false;" onclick="Tanchu('公路造价师','glzaojiafd/')">公路造价师</a>　|　<a href="javascript:return false;" onclick="Tanchu('环境影响评价师','huanjingfudao/')">环境影响评价师</a>　|　<a href="javascript:return false;" onclick="Tanchu('投资项目管理师','touzifd/')">投资项目管理师</a><!--　|　<a title="安全评价师" href="http://www.exam8.com/gongcheng/pingjia/" target="_blank">安全评价师</a>--></div></div></div></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="" target="_blank">财会类考试</a></div>
+        <div class="kcb2"><a href="javascript:return false;" onclick="Tanchu('会计从业资格','kjcyvipzh/')">会计从业</a>　|　<a href="javascript:return false;" onclick="Tanchu('会计职称','kuaijivipbg2011/')">会计职称</a>　|　<a href="javascript:return false;" onclick="Tanchu('经济师','wangxiao/jjs/')">经济师</a>　|　<a href="javascript:return false;" onclick="Tanchu('注册会计师','zhukuaifdacc/')">注册会计师</a>　|　<a href="javascript:return false;" onclick="Tanchu('注册税务师','shuiwuvipzh/')">税务师</a>　|　<a href="javascript:return false;" onclick="Tanchu('基金从业','jijinvipzd/')">基金从业</a>　|　<a href="javascript:return false;" onclick="Tanchu('统计师','tongjivipstudyez/')">统计师</a>　|　<a href="javascript:return false;" onclick="Tanchu('统计从业','tjcyvipstudyez/')">统计从业</a>　|　<a href="javascript:return false;" onclick="Tanchu('审计师','shenjivipxy/')">审计师</a>　|　<a href="javascript:return false;" onclick="Tanchu('国际内审师','ciafudaoacc/')">国际内审师</a>　|　<a href="javascript:return false;" onclick="Tanchu('理财规划师','chfpfudao/')">理财规划师</a>　|　<a href="javascript:return false;" onclick="Tanchu('资产评估师','pinggushi2011/')">资产评估师</a></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="#zige" target="_blank">资格类考试</a></div>
+        <div class="kcb2"><div style="float:left;"><a href="javascript:return false;" onclick="Tanchu('公务员考试','http://ht.exam8.com/class/')">公务员</a>　|　<a href="javascript:return false;" onclick="Tanchu('司法考试','')">司法</a>　|　<a href="javascript:return false;" onclick="Tanchu('企业法律顾问','flgwzd/')">企业法律顾问</a>　|　<a href="javascript:return false;" onclick="Tanchu('银行从业资格','yhcyfdxy/')">银行从业</a>　|　<a href="javascript:return false;" onclick="Tanchu('证券从业资格','zhengquanzd/')">证券从业</a>　|　<a href="javascript:return false;" onclick="Tanchu('期货从业资格','qihuofdzd/')">期货从业</a>　|　<a href="javascript:return false;" onclick="Tanchu('教师资格','jiaoshifudao/')">教师资格</a>　|　<a href="javascript:return false;" onclick="Tanchu('出版专业资格','chubanfudao/')">出版资格</a>　|　<a href="javascript:return false;" onclick="Tanchu('社会工作者','gzzviphq/')">社会工作者</a>　|　<a href="javascript:return false;" onclick="Tanchu('心理咨询师','xinlizixunfudao/')">心理咨询师</a>　|　<a href="javascript:return false;" onclick="Tanchu('人力资源师','renlivip/')">人力资源师</a>　　</div> <div onmousemove="onMous('id7')" onmouseout="onOver('id7')" style="position:relative;z-index:1;float:right;"><a href="#zige" title="更多>>" style="color:#f63;">更多>></a><div class="gcglsw" id=id7 >
+             
+           <div class="gcglsw3">
+        <a href="javascript:return false;" onclick="Tanchu('物流师','wuliufd/')">物流师</a>　|　<a href="javascript:return false;" onclick="Tanchu('价格鉴证师','jiagefudao/')">价格鉴证师</a>　|　<a href="javascript:return false;" onclick="Tanchu('管理咨询师','guanlifudao/')">管理咨询师</a>　|　<a href="javascript:return false;" onclick="Tanchu('秘书资格','mishufd/')">秘书资格</a>　|　<a href="javascript:return false;" onclick="Tanchu('广告师职业水平','guanggaofudao/')">广告师</a>　|　<a href="javascript:return false;" onclick="Tanchu('公共营养师','ggyyshq/')">公共营养师</a>　|　<a href="javascript:return false;" onclick="Tanchu('企业培训师','qypxshq/')">企业培训师</a></div></div></div></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="#waimao" target="_blank">外贸类考试</a></div>
+        <div class="kcb2"><a href="javascript:return false;" onclick="Tanchu('报关员','wangxiao/bgy2/')">报关员</a>　|　<a href="javascript:return false;" onclick="Tanchu('报检员','wangxiao/bjy2/')">报检员</a>　|　<a href="javascript:return false;" onclick="Tanchu('外销员','wxyfudao/')">外销员</a>　|　<a href="javascript:return false;" onclick="Tanchu('国际货运代理人','gjhydlrhq/')">货运代理人</a>　|　<a href="javascript:return false;" onclick="Tanchu('单证员','danzhengfudao/')">单证员</a>　|　<a href="javascript:return false;" onclick="Tanchu('跟单员','gendanfudao/')">跟单员</a>　|　<a href="javascript:return false;" onclick="Tanchu('国际商务师','gjswfudao/')">国际商务师</a></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="#yixue" target="_blank">医学类考试</a></div>
+        <div class="kcb2"><a href="javascript:return false;" onclick="Tanchu('执业医师','yishifudao/')">执业医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('执业药师','yaoshivip/')">执业药师</a>　|　<a href="javascript:return false;" onclick="Tanchu('临床执业医师','linchuangvip/')">临床执业医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('临床助理医师','linchuanghq/')">临床助理医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('口腔执业医师','yishifudao/')">口腔医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('中医医师','yishifudao/')">中医医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('公卫执业医师','yishifudao/')">公卫医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('中西医医师','yishifudao/')">中西医医师</a>　|　<a href="javascript:return false;" onclick="Tanchu('卫生资格','weishengyxjy/')">卫生资格</a>　|　<a href="javascript:return false;" onclick="Tanchu('执业护士','zyhushiyxjy/')">执业护士</a></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="#waiyu" target="_blank">外语类考试</a></div>
+        <div class="kcb2"><a href="javascript:return false;" onclick="Tanchu('职称英语','wangxiao/zcyy/')">职称英语</a><!--　|　<a href="javascript:return false;" onclick="Tanchu('英语四六级','cet46/')">英语四六级</a>-->　|　<a href="javascript:return false;" onclick="Tanchu('托福','toeflvipxdf/')">托福</a>　|　<a href="javascript:return false;" onclick="Tanchu('雅思','ieltsviphuanqiu/')">雅思</a>　|　<a href="javascript:return false;" onclick="Tanchu('商务英语','BECvip/')">商务英语</a>　|　<a href="javascript:return false;" onclick="Tanchu('公共英语','petsxy/')">公共英语</a>　|　<a href="javascript:return false;" onclick="Tanchu('口译笔译','transvip/')">口译笔译</a>　|　<a href="javascript:return false;" onclick="Tanchu('成人英语三级','cryysstudyez/')">成人英语三级</a></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="#xueli" target="_blank">学历类考试</a></div>
+        <div class="kcb2"><a href="javascript:return false;" onclick="Tanchu('成人高考','chengrenvip/')">成人高考</a>　|　<a href="javascript:return false;" onclick="Tanchu('自学考试','zikaofdzk/')">自学考试</a>　|　<a href="javascript:return false;" onclick="Tanchu('考研','http://un.koolearn.com/alliance/click?userid=ff8080812d120be7012d120be7fe0000&url=http%3A%2F%2Fc.koolearn.com%2Fsubject%2Fkaoyancx%2F')">考研</a>　|　<a href="javascript:return false;" onclick="Tanchu('高考','wangxiao/gaokao/')">高考</a>　|　<a href="javascript:return false;" onclick="Tanchu('中考','wangxiao/zhongkao/')">中考</a></div>
+      </li>
+      <li>
+        <div class="kcb1"><a href="#computer" target="_blank">计算机考试</a></div>
+        <div class="kcb2"><!--<a href="javascript:return false;" onclick="Tanchu('计算机等级考试','http://www.exam8.com/computer/djks/')">计算机等级考试</a>　|　--><a href="javascript:return false;" onclick="Tanchu('职称计算机','zhichengfudao/')">职称计算机</a></div>
+      </li>
+    </ul>
+  </div>
+ <div class="kctext"><img src="images/kctext.jpg" /></div>
+ <div class="main1">
+    <ul class="s_tool0">
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/examCenter/examlist.asp?ks=192&tgcid=335&guest=1" class="w200">01-模拟考场</a><div class="moni"></div>全国最先进的在线考试系统，实战演练 直取高分、全站免费做题！</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/chapterExercise/chapterExercise.asp?classID=192&tgcid=335&guest=1" class="w200">02-章节练习</a><div class="HDgq"></div>解读最新大纲，剖析命题规律，把握节点考点要点，精准命题预测。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/free.asp?classID=192&tgcid=335&guest=1" class="w200">03-高清课件</a><div class="mfei"></div>在线HD高清课件，1920*1080高清宽屏48小时免费试听。</li>
+              <li class=""><a onclick="freestudy();" href="javascript:;" class="w200">04-免费试听</a><div class="zjie"></div>注册立马享受48小时免费试听，完全真实体验。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/task/Wenda/Default.aspx?Classid=192&guest=1" class="w200">05-你问我答</a><div class="wdA"></div>提供专业、权威的解答；通过金钱悬赏，双方获取收益！</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/ks/cuotiji.asp?ks=192&tgcid=335&guest=1" class="w200">06-试题收藏</a><div class="scang"></div>将懂的、不懂的难点是否有疑问的收藏，方便在次打开做题。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/Reader/Reader.asp?classID=192&tgcid=335&guest=1" class="w200">07-资讯订阅</a><div class="dingy"></div>报考信息、考情变化考试资讯、实时掌握。</li>
+              <li><a target="_blank" href="http://bbs.233.com/" class="w200">08-交互试论坛</a><div class="bbsx"></div>考试交流，资料共享，快乐交友，互动学习。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/?ks=335&tgcid=335&guest=1" class="w200">09-不限次数</a><div class="cishu"></div>帐户随时随地都可学习，没有次数限制。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/ks/cuotiji.asp?ks=192&tgcid=335&guest=1" class="w200">10-试题纠错</a><div class="jiucuo"></div>题库在线扩展功能，在线纠错，赢取奖励。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/?ks=335&tgcid=335&guest=1" class="w200">11-多点学习</a><div class="dstu"></div>同一帐户绑定3-5台电脑，家、单位随时学习。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/?ks=335&tgcid=335&guest=1" class="w200">12-音频下载</a><div class="yinp"></div>所有课程资料均可下载，支持多种播放格式。</li>
+              <li><a target="_blank" href="http://wx.233.com/MobileSpread/" class="w200">13-手机离线课件</a><div class="lixian"></div>课件下载放置手机，随时随地享受学习。</li>
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/ks/cuotiji.asp?ks=192&tgcid=335&guest=1" class="w200">14-课堂笔记</a><div class="biji"></div>随时标注视频和文字学习点滴了然与心。</li>
+              <li style="line-height:19px;"><a target="_blank" href="http://wx.233.com/search/UserCenter/task/Share/Default.aspx?ClassID=192&guest=1" class="w200">15-资料分享</a><div class="cuoti"></div>最实用的学习交互平台-上传有价值资料，赚取现金；求购急需的资料，悬赏征求！</li>
+
+              <li><a target="_blank" href="http://wx.233.com/search/UserCenter/nexus/Groups/9" class="w200">16-好友组群</a><div class="haoyou"></div>学习问题，组群与老师共同讨论，效率更高！</li>
+  </ul>
+  </div>
+  
+</div>
+   <div class="clear"></div>
+<div class="gouke">
+  <div class="goukec">
+
+    <div class="liucheng">
+      <div class="liucheng1"> 购课指南 </div>
+      <ul>
+        <li><a href="" target="_blank">快速注册用户名</a></li>
+        <li><a href="shiting2012.asp" target="_blank">课程免费试听</a></li>
+        <li><a href="baoming2012.asp" target="_blank">快速报名选课 </a></li>
+        <li><a href="" target="_blank">如何支付费用</a></li>
+      </ul>
+    </div>
+    <div class="gouksx" style="width:2px;"><img src="images/gouksx.gif"/></div>
+    <div class="liucheng">
+      <div class="liucheng1"> 课程与订单 </div>
+      <ul>
+        <li><a href="" target="_blank">限时团购课程</a></li>
+        <li><a href="rightType=7" target="_blank">课程订单查询</a></li>
+        <li><a href="rightType=5" target="_blank">已开通课程</a></li>
+        <li><a href="rightType=6" target="_blank">未付费课程</a></li>
+      </ul>
+    </div>
+    <div class="gouksx" style="width:2px;"><img src="images/gouksx.gif"/></div>
+    <div class="liucheng">
+      <div class="liucheng1"> 售后与帮助 </div>
+      <ul>
+        <li><a href="" target="_blank">网校帮助中心</a></li>
+        <li><a href="" target="_blank">书城帮助中心</a></li>
+        <li><a href="" target="_blank">模考帮助中心</a></li>
+        <li><a href="/" target="_blank">团购帮助中心</a></li>
+      </ul>
+    </div>
+    <div class="gouksx" style="width:2px;"><img src="images/gouksx.gif"/></div>
+    <div class="liucheng">
+      <div class="liucheng1"> 支付方式 </div>
+      <ul>
+        <li><a href="h" target="_blank">支付方式</a></li>
+        <li><a href="h#wy" target="_blank">网上支付</a></li>
+        <li><a href="h#yh" target="_blank">银行转账汇款</a></li>
+        <li><a href="h#yj" target="_blank">邮局转账汇款</a></li>
+      </ul>
+    </div>
+    <div class="gouksx" style="width:2px;"><img src="images/gouksx.gif"/></div>
+    <div class="liuchengd">
+      <div class="liucheng1"> 咨询热线 </div>
+      <div class="photo">4000-888-566<br/><SPAN STYLE="font-size:24px;">010-62168566</SPAN></div>
+      <div class="time"> 周一至周日 8:30-21:30</div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="footer">
+  <div class="webinfo" style="padding-top:0px;margin-top:20px;background:"><span><img src="images/footer_p1.gif"> <img src="images/footer_p2.gif"></span><div>京ICP备05005269号-12  北京教育科技有限公司<br />
+    Copyright &copy; 2004-2012 <a href="" target="_blank" style="color:#b6afaf;">网校</a>（<a href="h" style="color:#b6afaf;" target="_blank">xiongying.com</a>) All Rights Reserved&nbsp;&nbsp;<a href="about/about.html">关于我们</a></div><div class="clear"></div>
+
+</div>
+
+</div>
+</body>
+</html>

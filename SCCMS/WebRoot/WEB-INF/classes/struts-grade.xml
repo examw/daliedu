@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="grade" namespace="/grade" 
+ 			extends="sccms-default">
+		<!--定义班级管理模块-->
+		<action name="grade" method="execute" class="com.changh.sccms.action.grade.GradeAction">
+			<result name="success" >/cms/jsp/lesson/grade.jsp</result>
+		</action>
+		<action name="gradeList" method="execute" 
+			class="com.changh.sccms.action.grade.ListAction">
+			<result name="success" type="json">
+				 <param name="root">gradeMap</param>
+			</result>
+		</action>
+		<!-- 2014.03.17 管理员后台开课 -->
+		<action name="gradeList2" method="execute" 
+			class="com.changh.sccms.action.grade.GradeListAction">
+			<result name="success" type="json">
+				 <param name="root">gradeMap</param>
+			</result>
+		</action>
+		<action name="classTeacher" class="com.changh.sccms.action.grade.TeacherAction">
+			<result name="success" type="json">
+				<param name="root">listTeacher</param>
+			</result>
+		</action>
+		<action name="classList" class="com.changh.sccms.action.grade.ClassAction">
+			<result name="success" type="json">
+				<param name="root">listClass</param>
+			</result>
+		</action>
+		<action name="examList" class="com.changh.sccms.action.grade.ExamAction">
+			<result name="success" type="json">
+				<param name="root">listExam</param>
+			</result>
+		</action> 
+		<action name="gradeDelete" method="execute" 
+			class="com.changh.sccms.action.grade.DeleteAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 班级修改 -->
+		<action name="gradeLoad" method="execute" 
+			class="com.changh.sccms.action.grade.LoadAction">
+			<result name="success">/cms/jsp/lesson/modifyGrade.jsp</result>
+		</action>
+		<action name="updateGrade" method="execute" 
+			class="com.changh.sccms.action.grade.UpdateAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 添加班级 -->
+		<action name="gradeAdd" method="execute" 
+			class="com.changh.sccms.action.grade.AddAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 添加班级类型 -->
+		<action name="gcAdd" method="execute" 
+			class="com.changh.sccms.action.grade.AddGradeCategoryAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!--定义课节管理模块-->
+		<action name="classDetailList" method="execute" 
+			class="com.changh.sccms.action.classDetail.ListAction">
+			<result name="success" type="json">
+				 <param name="root">classDetailMap</param>
+			</result>
+		</action>
+		<action name="classDetailNum" method="execute" 
+			class="com.changh.sccms.action.classDetail.FindNumberAction">
+			<result name="success" type="json">
+				 <param name="root">data</param>
+			</result>
+		</action>
+		<!-- 添加课节 -->
+		<action name="classDetailLoad" method="execute" 
+			class="com.changh.sccms.action.classDetail.LoadAction">
+			<result name="success">/cms/jsp/lesson/addClassDetail.jsp</result>
+		</action>
+		<action name="classDetailAdd" method="execute" 
+			class="com.changh.sccms.action.classDetail.AddAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>	
+		<action name="batchAdd" method="execute" 
+			class="com.changh.sccms.action.classDetail.BatchAddAction">
+			<result name="success">/cms/jsp/lesson/batchAdd.jsp</result>
+		</action>
+		<!-- 修改课节 -->
+		<action name="modifyClassDetail" method="execute" 
+			class="com.changh.sccms.action.classDetail.ModifyAction">
+			<result name="success">
+				/cms/jsp/lesson/modifyClassDetail.jsp
+			</result>
+		</action>
+		<action name="updateClassDetail" method="execute" 
+			class="com.changh.sccms.action.classDetail.UpdateAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 删除课节 -->
+		<action name="classDetailDelete" method="execute" 
+			class="com.changh.sccms.action.classDetail.DeleteAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>	
+		<!-- 查看课节 -->
+		<action name="checkClassDetail" method="execute" 
+			class="com.changh.sccms.action.classDetail.CheckAction">
+			<result name="success" type="json">
+				 <param name="root">classDetailMap</param>
+			</result>
+		</action>
+		<!-- 讲义管理 -->
+		<!-- 添加讲义 -->	
+		<action name="loadLecture" method="execute" 
+			class="com.changh.sccms.action.lecture.LoadAction">
+			<result name="success">/cms/jsp/lesson/addLecture.jsp</result>
+		</action>
+		<action name="lectureAdd" method="execute" 
+			class="com.changh.sccms.action.lecture.AddAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<action name="lecture" method="execute" 
+			class="com.changh.sccms.action.lecture.LectureAction">
+			<result>/cms/jsp/lesson/checked.jsp</result>
+		</action>
+		<!-- 查看当期课节下的所以讲义 -->
+		<action name="lectureList" method="execute" 
+			class="com.changh.sccms.action.lecture.ListAction">
+			<result name="success" type="json">
+				 <param name="root">lectureMap</param>
+			</result>
+		</action>
+		<!-- 修改讲义 -->	
+		<action name="modifyLecture" method="execute" 
+			class="com.changh.sccms.action.lecture.ModifyAction">
+			<result name="success">/cms/jsp/lesson/modifyLecture.jsp</result>
+		</action>	
+		<action name="updateLecture" method="execute" 
+			class="com.changh.sccms.action.lecture.UpdateAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 删除讲义 -->
+		<action name="lectureDelete" method="execute" 
+			class="com.changh.sccms.action.lecture.DeleteAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>	
+		<!-- 上传讲义 -->
+		<action name="uploadFile" class="com.changh.sccms.action.lecture.UploadAction">
+			<param name="savePath">/upload</param>
+		</action>
+		<!-- 预览视频 -->
+		<action name="showFLV" class="com.changh.sccms.action.grade.FLVAction">
+			<result name="success">/cms/jsp/lesson/showFLV.jsp</result>
+		</action>
+		
+		<!-- 附件上传 -->
+		<action name="chooseFile" class="com.changh.sccms.action.grade.ChooseFile">
+			<result name="success">/cms/jsp/lesson/chooseFile.jsp</result>
+		</action>
+		<!-- 上传附件 -->
+		<action name="uploadDataFile" class="com.changh.sccms.action.grade.UploadFileAction">
+			<param name="savePath">/upload</param>
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!--  -->
+		<action name="updateOpenTime" class="com.changh.sccms.action.classDetail.UpdateOpenTimeAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+ 	</package>
+ </struts>

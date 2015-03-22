@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="release" namespace="/release" 
+ 			extends="json-default">
+ 		<action name="releaseExam" method="doRelease" 
+			class="com.changh.sccms.action.release.ReleaseAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<action name="releaseGrade" method="execute" 
+			class="com.changh.sccms.action.release.ReleaseGradeAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<action name="releaseFoot" method="execute" 
+			class="com.changh.sccms.action.release.WebInfoAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<action name="releaseLecture" method="execute" 
+			class="com.changh.sccms.action.release.ReleaseLectureAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<action name="releaseTeacher" method="execute" 
+			class="com.changh.sccms.action.release.ReleaseTeacherAction">
+			<result name="success" type="json">
+				 <param name="root">data</param>
+			</result>
+		</action>
+		<action name="youeclass" method="doRelease" 
+			class="com.changh.sccms.action.release.YoueclassAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<action name="releaseClass" method="releaseClass" 
+			class="com.changh.sccms.action.release.YoueclassAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+ 	</package>
+ </struts>

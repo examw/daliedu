@@ -1,0 +1,159 @@
+<style>
+	.wtext, .pbm, .pbtxt {
+    clear: both;
+    float: left;
+    font: 12px/23px "微软雅黑";
+    margin: 0;
+    padding: 8px 10px;
+    width: 362px;
+}
+.wtext {
+    color: #005599;
+}
+.wtext strong {
+    color: #FF6600;
+}
+.radioz {
+    float: none;
+}
+.pbm {
+    float: left;
+    margin: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+    width: 362px;
+}
+.pbm textarea.pbbg {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #A3CBE4;
+    clear: both;
+    color: #666666;
+    float: left;
+    font-family: 微软雅黑;
+    font-size: 13px;
+    height: 70px;
+    line-height: 24px;
+    margin: 0;
+    padding: 8px;
+    width: 348px;
+}
+.pbtxt {
+    background: none repeat scroll 0 0 #F7FBFF;
+    border-top: 1px dotted #DEEBF3;
+    display: inline;
+    height: 40px;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 12px;
+    padding: 0 10px;
+    position: relative;
+}
+.pbtxt .subm, .pbtxt .qx {
+    background: url("http://img.233.com/wx/img/uc/zj_all.png") no-repeat scroll -73px -346px transparent;
+    border: 0 none;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline;
+    float: right;
+    font-family: "微软雅黑";
+    height: 26px;
+    line-height: 24px;
+    margin: 6px 14px 0 0;
+    padding-top: 2px;
+    text-align: center;
+    text-decoration: none;
+    width: 68px;
+}
+</style>
+<div class="wtext">
+	为方便我们排查错误，请您详细描述本题错误，例如：<br />
+	<input name="ErrorType" type="radio" value="1" class="radioz" /><strong>错别字</strong>
+	<input name="ErrorType" type="radio" value="2" class="radioz" />答案有误 
+	<input name="ErrorType" type="radio" value="3" class="radioz" />图片模糊
+	<input name="ErrorType" type="radio" value="4" class="radioz" />答案有异议
+	<input name="ErrorType" type="radio" value="5" class="radioz" />其他
+</div>
+<div class="pbm">
+	<textarea name="txtDisdescription" cols="45" rows="6" class="pbbg"
+		id="txtDisdescription"></textarea>
+	<div id="ErrorNum">还可以输入:150个字</div>
+	<div class="pbtxt">
+		<input type="submit" class="qx" name="Submit" value="取消"> <input
+			type="submit" class="subm" name="Submit" value="确定">
+	</div>
+
+</div>
+<script>
+	$("#TB_closeWindowButton,.qx").on("click", function() {
+		FrameDialog.close();
+	});
+	function strLen(str) {
+		var i, sum;
+		sum = 0;
+		for (i = 0; i < str.length; i++) {
+			if ((str.charCodeAt(i) >= 0) && (str.charCodeAt(i) <= 255))
+				sum = sum + 0.5;
+			else {
+				sum = sum + 1;
+			}
+		}
+		return sum;
+	}
+	function TipsNum(MaxNum, inputObj, NumObj) {
+		var NoteNumMax = MaxNum || 150, $inputValLength = 0;
+		var NumObj = NumObj || "LNoteNum";
+		var NumTips;
+		inputObj.keyup(function() {
+			var $inputVal = $(this).val(), $inputValLength = strLen($inputVal);
+			var $LNoteNumObj = $("#" + NumObj);
+			if ($inputValLength > NoteNumMax) {
+				NumTips = $inputValLength - NoteNumMax;
+				NumTips = "<cite style='color:red'>已超过:" + Math.ceil(NumTips)
+						+ "个字<cite>";
+			} else {
+				NumTips = NoteNumMax - $inputValLength;
+				NumTips = "还可以输入:" + Math.floor(NumTips) + "个字";
+			}
+			$LNoteNumObj.html(NumTips);
+		});
+	}
+
+	function postError() {
+		$("input.subm")
+				.on("click",
+						function() {
+							var ErrorType = $("input[name='ErrorType']:checked")
+									.val();
+							var content = $("#txtDisdescription").val();
+							if (ErrorType == "" || ErrorType == undefined) {
+								notice("请先选择错误类别", 2);
+								return false;
+							}
+							if (content == "") {
+								notice("请先输入描述信息", 2);
+								return false;
+							}
+							$
+									.ajax({
+										type : "POST",
+										url : "../member/submitError",
+										data:{"error.paperId":PaperID,"error.questId":ExamID,"error.errorType":ErrorType,"error.errorContent":content+""},
+										dataType : "json",
+										success : function(ok) {
+											if(ok) {
+												FrameDialog.close();
+												succeed("您好，您举报的错题信息提交成功", 2);
+											} else {
+												FrameDialog.close();
+											}
+										},
+										error :function(){
+											notice("系统错误,请刷新重试",2);
+										}
+									});
+						});
+
+	}
+	TipsNum(150, $("#txtDisdescription"), "ErrorNum");
+	postError();
+</script>

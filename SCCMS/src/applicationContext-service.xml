@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+	<bean id="studentService" scope="prototype"
+		class="com.changh.sccms.service.impl.StudentServiceImpl">
+		<property name="studentDao" ref="studentDao"></property>
+		<property name="tradeDao" ref="tradeDao">
+		</property>
+	</bean>
+	<bean id="teacherService" scope="prototype"
+		class="com.changh.sccms.service.impl.TeacherServiceImpl">
+		<property name="teacherDao" ref="teacherDao">
+		</property>
+	</bean>
+	<bean id="examCategoryService" scope="prototype"
+		class="com.changh.sccms.service.impl.ExamCategoryServiceImpl">
+		<property name="examCategoryDao" ref="examCategoryDao">
+		</property>
+	</bean>
+	<bean id="gradeService" scope="prototype"
+		class="com.changh.sccms.service.impl.GradeServiceImpl">
+		<property name="gradeDao" ref="gradeDao">
+		</property>
+	</bean>
+	<bean id="administratorService" scope="prototype"
+		class="com.changh.sccms.service.impl.AdministratorServiceImpl">
+		<property name="administratorDao" ref="administratorDao">
+		</property>
+	</bean>
+	<bean id="expressCompanyService" scope="prototype"
+		class="com.changh.sccms.service.impl.ExpressCompanyServiceImpl">
+		<property name="expressCompanyDao" ref="expressCompanyDao">
+		</property>
+	</bean>
+	<bean id="studyCardService" scope="prototype"
+		class="com.changh.sccms.service.impl.StudyCardServiceImpl">
+			<property name="studyCardDao" ref="studyCardDao"></property>
+			<property name="rechargeRecordDao" ref="rechargeRecordDao">
+		</property>
+	</bean>
+	<bean id="classDetailService" scope="prototype"
+		class="com.changh.sccms.service.impl.ClassDetailServiceImpl">
+		<property name="classDetailDao" ref="classDetailDao"></property>
+	</bean>
+	<bean id="lectureService" scope="prototype"
+		class="com.changh.sccms.service.impl.LectureServiceImpl">
+		<property name="lectureDao" ref="lectureDao">
+		</property>
+	</bean>
+	<bean id="classPackageService" scope="prototype"
+		class="com.changh.sccms.service.impl.ClassPackageServiceImpl">
+		<property name="classPackageDao" ref="classPackageDao">
+		</property>
+	</bean>
+	<bean id="cartService" scope="session"
+		class="com.changh.sccms.service.impl.CartServiceImpl">
+		<aop:scoped-proxy/>
+		<property name="gradeDao" ref="gradeDao"></property>
+		<property name="classPackageDao" ref="classPackageDao"></property>
+	</bean>
+		<bean id="orderService" scope="prototype"
+		class="com.changh.sccms.service.impl.OrderServiceImpl">
+		<property name="orderDao" ref="orderDao"></property>
+		<property name="studentDao" ref="studentDao"></property>
+		<property name="sendDao" ref="sendDao"></property>
+		<property name="tradeDao" ref="tradeDao"></property>
+		<property name="itemDao" ref="itemsDao"></property>
+	</bean>
+	<bean id="itemsService" scope="prototype"
+		class="com.changh.sccms.service.impl.ItemsServiceImpl">
+		<property name="itemsDao" ref="itemsDao">
+		</property>
+	</bean>
+	<bean id="sendService" scope="prototype"
+		class="com.changh.sccms.service.impl.SendServiceImpl">
+		<property name="sendDao" ref="sendDao">
+		</property>
+	</bean>
+	<bean id="tradeService" scope="prototype"
+		class="com.changh.sccms.service.impl.TradeServiceImpl">
+		<property name="tradeDao" ref="tradeDao">
+		</property>
+	</bean>
+	<bean id="menuService" scope="prototype"
+		class="com.changh.sccms.service.impl.MenuServiceImpl">
+		<property name="menuDao" ref="menuDao">
+		</property>
+	</bean>
+	<bean id="webInfoService" scope="prototype"
+		class="com.changh.sccms.service.impl.WebInfoServiceImpl">
+		<property name="webInfoDao" ref="webInfoDao">
+		</property>
+	</bean>
+	<bean id="askOrComplainService" scope="prototype"
+		class="com.changh.sccms.service.impl.AskOrComplainServiceImpl">
+		<property name="askOrComplainDao" ref="askOrComplainDao">
+		</property>
+		<property name="replyDao" ref="replyDao">
+		</property>
+	</bean>
+	<bean id="examPaperService" scope="prototype" class="com.changh.sccms.service.impl.ExamPaperServiceImpl">
+		<property name="examPaperDao" ref="examPaperDao"></property>
+		<property name="examRuleDao" ref="examRuleDao"></property>
+		<property name="examQuestionDao" ref="examQuestionDao"></property>
+	</bean>
+	<bean id="examQuestionErrorService" scope="prototype" class="com.changh.sccms.service.impl.ExamQuestionErrorServiceImpl">
+		<property name="examQuestionDao" ref="examQuestionDao"></property>
+		<property name="examQuestionErrorDao" ref="examQuestionErrorDao"></property>
+	</bean>
+	<bean id="commentService" scope="prototype" class="com.changh.sccms.service.impl.CommentServiceImpl">
+		<property name="commentDao" ref="commentDao"></property>
+	</bean>
+	<bean id="newClassService" scope="prototype" class="com.changh.sccms.service.impl.NewClassServiceImpl">
+		<property name="newClassDao" ref="newClassDao"></property>
+	</bean>
+	<bean id="newsService" scope="prototype" class="com.changh.sccms.service.impl.NewsServiceImpl">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	<!-- 2014.06.04 -->
+	<bean id="lessonCardService" scope="prototype"
+		class="com.changh.sccms.service.impl.LessonCardServiceImpl">
+		<property name="lessonCardDao" ref="lessonCardDao">
+		</property>
+	</bean>
+</beans>

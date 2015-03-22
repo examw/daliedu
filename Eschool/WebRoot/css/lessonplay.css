@@ -1,0 +1,166 @@
+/* CSS Document */
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,Passlogin,table,td,img,div,iframe{margin:0;padding:0;border:0;}
+body  { margin:0;color:#333; font:13px "宋体",Lucida Grande, Verdana, Lucida, Arial, Helvetica, sans-serif; text-align:left;
+background-image:url(../images/edu1.gif);}
+ul,li,dl,ul,ol{list-style:none;}
+select	{font-size:13px; color:#333333;}
+input	{font-size:13px; color:#333333;}
+select,input{vertical-align:middle; padding:0; margin:0;}
+.conU{padding:5px;}
+.doing{float:right;margin-right:10px; color:#FF0000;}
+.doing img{vertical-align:middle;}
+
+.cls {clear:both;}
+.dis{display:inline;}
+
+a:link {color:#333;text-decoration:none;} 
+a:visited {color: #333;text-decoration:none;} 
+a:hover{color: #F00; text-decoration:underline;} 
+a:active {color: #F00;text-decoration:underline;}
+
+.hidden{ display:none}
+
+
+#warpper{
+	width:100%;
+	margin:0 auto;
+	text-align:left;
+	clear:both;}
+	
+.nav{
+	height:60px;
+	padding-left:20px;}
+	
+.b_nav{
+	height:25px;
+	padding-top:4px;
+	border:1px solid #d8dadd;
+	text-align:center;
+	background:url(../images/b_navbg.jpg) repeat-y left bottom;}
+		
+.course{
+	padding-bottom:5px;
+	border-bottom:1px solid #dddddd;
+	margin-bottom:8px;}
+
+a.lblack:link{ color:#949494; text-decoration:none;}
+a.lblack:visited{ color:#949494; text-decoration:none;}	
+a.lblack:hover{ color:#FF0000; text-decoration:none;}
+
+.speach_next{
+	float:left;
+	width:48px;
+	height:21px;
+	background-color:#f2f2f2;
+	margin-left:10px;
+	display:inline;
+	text-align:center;
+	line-height:21px;}	
+
+h2{
+	font-size:14px;
+	text-align:center;}
+	
+.location{ height:28px; line-height:28px;padding-left:20px; margin-bottom:10px;}
+.rback{
+	float:right;
+	margin-right:20px;
+	font-weight:normal;
+	font-size:13px;}
+
+#conten{text-align:left; width:99%;line-height: 18px;}
+
+#ArticleCnt{}
+h4{
+	font-size:14px;
+	line-hegiht:30px;
+	padding-left:10px;}
+
+#ArticleCnt p{	
+	cursor:pointer; 
+	display:block;
+	margin-bottom:1px;
+	/*line-height:18px;*/
+	padding:5px;}
+	
+#ArticleCnt .con_dg{
+	margin-left:100px; 
+	line-height:30px;}
+
+h3{
+	font-size:18px;
+	text-align:center;
+	border-bottom:1px solid #e7e7e7;
+	height:50px;
+	line-height:50px;
+	margin-bottom:10px;}
+	
+.tab_question_detail{border:1px solid #e7e7e7;}
+.fred_str{ color:#FF3300; font-weight:bold;}
+
+.fred_str a:link,.fred_str a:visited{color:#FF3300; text-decoration:none;}
+.fred_str a:hover{color:#FF0000; text-decoration:underline;}
+
+/*例题控制*/
+.cAnswer{ display:none;}
+.cNote{ display:none;}
+.TeachProgram
+{
+	position:absolute;
+	float:left;
+	height:150px;
+	width:200px;
+	overflow-y:auto;
+	overflow-x:hidden;
+	display:none;
+	background-color:#FFFFFF;
+	border: #999999 double 1px;
+	top:20px;
+	right:30px;
+	line-height:25px;
+	padding:5px 5px 5px 5px;
+}		
+
+.b_black /*黑色加粗*/
+{
+	color:black;
+	font-weight:bold;
+}
+
+.b_red/*红色加粗*/
+{
+	color:red;
+	font-weight:bold;
+}
+.b_blue/*蓝色加粗*/
+{
+	color:blue;
+	font-weight:bold;
+}
+.b_pink/*粉色加粗*/
+{
+	color:pink;
+	font-weight:bold;
+}
+
+.red/*红色*/
+{
+	color:red;
+}
+.blue/*蓝色*/
+{
+	color:blue;
+}
+.pink/*粉色*/
+{
+	color:pink;
+}
+
+.y_shading/*黄色底纹*/
+{
+	background-color:yellow;
+}
+.x_shading/*蓝色底纹*/
+{
+	background-color:#00ffff;
+}

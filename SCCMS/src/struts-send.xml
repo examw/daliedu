@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="send" namespace="/send" 
+ 			extends="sccms-default">
+ 			<!-- 定义寄送管理模块的Action -->
+ 		<!-- 寄送公司列表 -->
+ 		<action name="companyList" method="execute" 
+			class="com.changh.sccms.action.send.CompanyListAction">
+			<!-- for grid -->
+			<result name="success" type="json">
+				<param name="root">companyList</param>
+			</result>
+			<!-- for select -->
+			<result name="success1" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+ 		<!-- load快递公司信息 -->
+		<action name="loadCompany" method="execute" 
+			class="com.changh.sccms.action.send.CompanyLoadAction">
+			<result name="success">
+				/cms/jsp/send/addForm.jsp
+			</result>
+		</action>
+		<!-- 修改快递公司信息 -->
+		<action name="updateCompany" method="execute"
+			class="com.changh.sccms.action.send.CompanyUpdateAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 添加快递公司 -->
+		<action name="addCompany" method="execute"
+			class="com.changh.sccms.action.send.CompanyAddAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>	
+		</action>
+		<!-- 删除快递公司 -->
+		<action name="deleteCompany" method="execute"
+			class="com.changh.sccms.action.send.CompanyDeleteAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 寄送列表 -->
+		<action name="sendList" method="execute" 
+			class="com.changh.sccms.action.send.SendListAction">
+			<result name="success" type="json">
+				<param name="root">sendList</param>
+			</result>
+		</action>
+		<!-- load寄送信息 -->
+		<action name="loadSend" method="execute" 
+			class="com.changh.sccms.action.send.SendLoadAction">
+			<result name="success">
+				/cms/jsp/send/update.jsp
+			</result>
+		</action>
+		<!-- 修改寄送信息 -->
+		<action name="updateSend" method="execute"
+			class="com.changh.sccms.action.send.SendUpdateAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 搜索 -->
+		<action name="searchSend" method="execute" 
+			class="com.changh.sccms.action.send.SendSearchAction">
+			<result name="success" type="json">
+				<param name="root">sendList</param>
+			</result>
+		</action>
+		<!-- 寄送详细 -->
+		<action name="sendDetail" method="execute" 
+			class="com.changh.sccms.action.send.SendDetailAction">
+			<result name="success">
+				/cms/jsp/send/sendDetail.jsp
+			</result>
+			<result name="success2">
+				/cms/jsp/send/addSendAddr.jsp
+			</result>
+		</action>
+		<action name="addSendAddr" method="execute" class="com.changh.sccms.action.send.AddSendAddressAction">
+			<result name="success" type="redirect">/send/sendDetail/sendId=${send.sendId}</result>
+		</action>
+ 	</package>
+ </struts>

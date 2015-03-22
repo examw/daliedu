@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx" 
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"	
+		>
+	<!-- 配置数据源 -->
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:db.properties</value>
+        </property>
+    </bean>
+	<bean id="dataSource" 
+		class="org.apache.commons.dbcp.BasicDataSource">
+    	<property name="driverClassName">
+            <value>${datasource.driverClassName}</value>
+        </property>
+        <property name="url">
+            <value>${datasource.url}</value>
+        </property>
+        <property name="username">
+            <value>${datasource.username}</value>
+        </property>
+        <property name="password">
+            <value>${datasource.password}</value>
+        </property>
+        <property name="maxActive">
+         	<value>${c3p0.maxActive}</value>
+		</property>
+		<!-- 最大等待数 -->  
+    	<property name="maxIdle" >
+    		 <value>${c3p0.maxIdle}</value>
+    	</property>  
+    	<!-- 最大等待时间 单位毫秒 -->
+    	<property name="maxWait" >
+    		 <value>${c3p0.maxWait}</value>
+    	</property>  
+    	<!-- 初始化大小 -->
+    	<property name="initialSize">
+    		 <value>${c3p0.initialSize}</value>
+    	</property> 
+	</bean>
+	<!-- 初始化持久层 -->
+	<bean id="sessionFactory" 
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 数据源 -->
+		<property name="dataSource" ref="dataSource">
+		</property>
+		<!-- hibernate属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<!-- 采用自定义方言 -->
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+                <prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+                <prop key="hibernate.connection.release_mode">after_transaction</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>	
+				<value>com/changh/eschool/entity/Student.hbm.xml</value>
+				<value>com/changh/eschool/entity/Order.hbm.xml</value>
+				<value>com/changh/eschool/entity/Question.hbm.xml</value>
+				<value>com/changh/eschool/entity/Answer.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExamCategory.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExamCategory1.hbm.xml</value>
+				<value>com/changh/eschool/entity/Grade.hbm.xml</value>
+				<value>com/changh/eschool/entity/GradeCategory.hbm.xml</value>
+				<value>com/changh/eschool/entity/ClassPackage.hbm.xml</value>
+				<value>com/changh/eschool/entity/PackageCategory.hbm.xml</value>
+				<value>com/changh/eschool/entity/Teacher.hbm.xml</value>
+				<value>com/changh/eschool/entity/ClassDetail.hbm.xml</value>
+				<value>com/changh/eschool/entity/Send.hbm.xml</value>
+				<value>com/changh/eschool/entity/Items.hbm.xml</value>
+				<value>com/changh/eschool/entity/Address.hbm.xml</value>
+				<value>com/changh/eschool/entity/Lecture.hbm.xml</value>
+				<value>com/changh/eschool/entity/Note.hbm.xml</value>
+				<value>com/changh/eschool/entity/RechargeRecord.hbm.xml</value>
+				<value>com/changh/eschool/entity/StudyCard.hbm.xml</value>
+				<value>com/changh/eschool/entity/AskOrComplain.hbm.xml</value>
+				<value>com/changh/eschool/entity/Reply.hbm.xml</value>
+				<value>com/changh/eschool/entity/QuestionCollect.hbm.xml</value>
+				<value>com/changh/eschool/entity/StudyRecord.hbm.xml</value>
+				<value>com/changh/eschool/entity/Deal.hbm.xml</value>
+				<value>com/changh/eschool/entity/Comment.hbm.xml</value>			
+				<value>com/changh/eschool/entity/Trade.hbm.xml</value>
+				<value>com/changh/eschool/entity/StuDeal.hbm.xml</value>
+				<value>com/changh/eschool/entity/WebInfo.hbm.xml</value>
+				<value>com/changh/eschool/entity/Cooperate.hbm.xml</value>
+				<value>com/changh/eschool/entity/AppAdvice.hbm.xml</value>
+				<!-- <value>com/changh/eschool/entity/Teacher.hbm.xml</value>
+				<value>com/changh/eschool/entity/Administrator.hbm.xml</value>
+				<value>com/changh/eschool/entity/Send.hbm.xml</value>
+				
+				
+			
+				<value>com/changh/eschool/entity/StudyCard.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExpressCompany.hbm.xml</value>
+				
+				
+				
+				<value>com/changh/eschool/entity/ClassPackageGrade.hbm.xml</value>
+				<value>com/changh/eschool/entity/Deal.hbm.xml</value>
+				
+				<value>com/changh/eschool/entity/QuestionCollect.hbm.xml</value> --> 
+				<value>com/changh/eschool/entity/ExamPaper.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExamQuestion.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExamRule.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExamRecord.hbm.xml</value>
+				<value>com/changh/eschool/entity/ExamQuestionError.hbm.xml</value>
+				<value>com/changh/eschool/entity/News.hbm.xml</value>
+				<value>com/changh/eschool/entity/LessonCard.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	<!-- 发邮件 -->
+	<bean id="mailSender"
+          class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.163.com"/>
+            <!-- mail  account   -->
+        <property name="username" value="examw_account@163.com"/>
+        <property name="password" value="www.examw.com"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+            </props>
+        </property>
+    </bean>
+	<!-- mail template -->
+    <bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="examw_account@163.com"/>
+        <property name="subject" value="找回密码"/>
+    </bean>
+	
+		<!-- 声明式事务 -->
+   	<bean id="txtManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<!-- 定义一个通知,指定事务管理规则 注意要有tx的schema -->
+	<tx:advice id="txtAdvice" transaction-manager="txtManager">
+		<tx:attributes>
+			<tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="create*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="cancel*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="find*" propagation="REQUIRED"/>
+			<tx:method name="login*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="register*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="recharge*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="reset*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="*" read-only="true" propagation="NOT_SUPPORTED"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 采用AOP方式将txtAdvice切入到service组件上 -->
+	<aop:config>
+		<!-- 定义切入点,将service组件指定为目标对象 -->
+		<aop:pointcut id="servicePointcut" 
+			expression="execution(* com.changh.eschool.service..*.*(..)))"/>
+		<!-- 将txtAdvice和切入点相结合 -->
+		<aop:advisor advice-ref="txtAdvice" 
+			pointcut-ref="servicePointcut"/>
+	</aop:config>
+	
+    <bean id="orderDao" scope="prototype"
+	class="com.changh.eschool.dao.impl.HibernateOrderDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	 <bean id="questionDao" scope="prototype"
+	class="com.changh.eschool.dao.impl.HibernateQuestionDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<bean id="RechargeDao" scope="prototype"
+	class="com.changh.eschool.dao.impl.HibernateRechargeRecordDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+		<bean id="askOrComplainDao" scope="prototype" class="com.changh.eschool.dao.impl.HibernateAskOrComplainDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+		<bean id="examCategoryDao" scope="prototype" class="com.changh.eschool.dao.impl.HibernateExamCategoryDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	 <bean id="gradeDao" scope="prototype" class="com.changh.eschool.dao.impl.HibernateGradeDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+</beans>

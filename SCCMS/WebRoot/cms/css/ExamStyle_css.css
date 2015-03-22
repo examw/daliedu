@@ -1,0 +1,190 @@
+
+BODY {
+    font-size: 12px;
+    margin: 0;
+}
+.main {
+    margin: auto;
+    text-align: center;
+}
+a {
+    text-decoration: none;
+}
+a {
+    outline: medium none;
+}
+a:hover {
+    color: #FF6600;
+    text-decoration: underline;
+}
+.hrline{ border-top:1px dashed #aaa;margin:3px 0px 6px 0px}
+label {
+    background-color: #E0E0E0;
+    cursor: pointer;
+    line-height: 20px;
+    margin: 0 5px;
+    padding: 1px 12px;
+    text-align: center;
+}
+.labelhover {
+    background-color: #FFEDB2;
+    outline: 1px dotted #FF0000;
+}
+.input_select {
+    cursor: pointer;font-size: 17px; outline: 1px dotted #E0E0E0; 
+   
+}
+.input_select1 {
+    background-color: #669900;
+    font-size: 17px;
+    outline: 1px dotted #669900;
+}
+.RulesTitle {
+    background-color: #F1F1F1;
+    border-color: #E0E0E0;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 150%;
+    margin: auto auto 5px;
+    padding: 8px;
+    text-align: left;
+    width: 89.5%;
+}
+.Problem {
+    background-image: url("examda.jpg");
+    border-color: #C9C9C9;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 22px;
+    margin: auto auto 5px;
+    padding: 8px;
+    text-align: left;
+    width: 90%;
+    word-break: break-all;
+}
+.question {
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-top: 8px;
+    padding: 5px 0;
+}
+.questionhover {
+    border: 1px solid #219AE6;
+}
+.mark {
+    background-color: #FEFBEE;
+    border: 1px solid #FF6600;
+}
+.Correction {
+    background: url("../images/answer0.gif") no-repeat scroll 0 0 transparent;
+    clear: both;
+    color: #005599;
+    display: block;
+    font-size: 12px;
+    padding-left: 16px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+.SelectAnswer {
+    background-color: #F2F2F2;
+    border: 1px solid #E0E0E0;
+    color: #000000;
+    font-weight: bold;
+    margin: auto auto 5px;
+    padding: 8px;
+    text-align: left;
+    width: 90%;
+}
+.line {
+    border-bottom: 1px dotted #666666;
+    height: 0;
+    padding: 0;
+    width: 98%;
+}
+.NoShow {
+    display: none;
+}
+.UserAnswer {
+    background-color: #D6EBC2;
+    border-color: #669900;
+    border-style: solid;
+    border-width: 1px;
+    color: #2B4516;
+    line-height: 28px;
+    margin: 4px 0 8px;
+    padding: 5px 8px;
+    text-align: left;
+    width: 90%;
+    word-break: break-all;
+}
+.Analysis {
+    background-color: #D6EBC2;
+    border-color: #669900;
+    border-style: solid;
+    border-width: 1px;
+    color: #2B4516;
+    line-height: 24px;
+    margin: 4px 0 8px;
+    padding: 5px 8px;
+    text-align: left;
+    width: 90%;
+    word-break: break-all;
+}
+.Analysis1 {
+    background-color: #E2F5FF;
+    border-color: #3399CC;
+    border-style: solid;
+    border-width: 1px;
+    color: #003366;
+    line-height: 24px;
+    margin: 4px 0 8px;
+    padding: 5px 8px;
+    text-align: left;
+    width: 90%;
+    word-break: break-all;
+}
+.Analysis2 {
+    background-color: #FFE2DB;
+    border-color: #CC3300;
+    border-style: solid;
+    border-width: 1px;
+    color: #880000;
+    line-height: 24px;
+    margin: auto auto 5px;
+    padding: 5px 8px;
+    text-align: left;
+    width: 90%;
+    word-break: break-all;
+}
+.editbutton {
+    background-image: url("jc.gif");
+    border-color: -moz-use-text-color;
+    border-style: none;
+    border-width: 0;
+    color: #000000;
+    cursor: pointer;
+    font-family: Tahoma;
+    font-size: 11px;
+    height: 20px;
+    padding: 0;
+    width: 73px;
+}
+.textarea {
+    background: url("alert.gif") no-repeat scroll right top transparent;
+    height: 90px;
+    width: 500px;
+}
+.Problem2 {
+    background-image: url("examw.jpg");
+    border-color: #C9C9C9;
+    border-style: dotted;
+    border-width: 1px;
+    line-height: 22px;
+    margin: auto auto 5px;
+    padding: 8px;
+    text-align: left;
+    width: 90%;
+    word-break: break-all;
+}
+.right{ float:right;font-family:Arial;font-weight:normal;font-size:13px; #margin-top:-20px;_margin-top:-20px;}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="complain" namespace="/complain" 
+ 			extends="sccms-default">
+ 			<!-- 定义寄送管理模块的Action -->
+ 		<action name="complainList" class="com.changh.sccms.action.complain.ListAction">
+ 			<result name="success" type = "json">
+ 				<param name="root">complainList</param>
+ 			</result>
+ 		</action>
+ 		<!-- 加载问题 -->
+ 		<action name="load" class="com.changh.sccms.action.complain.LoadAction">
+ 			<result name="success">
+ 				/cms/jsp/askAndComplain/answer.jsp
+ 			</result>
+ 		</action>
+ 		<!-- 加答复 -->
+ 		<action name="addReply" class="com.changh.sccms.action.complain.AddReplyAction">
+ 			<result name="success" type = "json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 		</action>
+ 		<!-- 加载答复 -->
+ 		<action name="loadReply" class="com.changh.sccms.action.complain.LoadReplyAction">
+ 			<result name="success">
+ 				/cms/jsp/askAndComplain/replyDetail.jsp
+ 			</result>
+ 		</action>
+ 	</package>
+ </struts>

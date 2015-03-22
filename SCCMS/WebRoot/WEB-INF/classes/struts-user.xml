@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="user" namespace="/user" 
+ 			extends="json-default">
+ 			<!-- 定义学员管理模块的Action -->
+ 		<action name="studentList" method="execute" 
+			class="com.changh.sccms.action.user.student.ListAction">
+			<result name="success" type="json">
+				 <param name="root">gridMap</param>
+			</result>
+		</action>	
+		<action name="studentSelect" method="execute" 
+			class="com.changh.sccms.action.user.student.SelectAction">
+			<result name="success" type="json">
+				 <param name="root">stuMap</param>
+			</result>
+		</action>
+		<action name="studentDelete" class="com.changh.sccms.action.user.student.DeleteAction">
+			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+		</action>
+		 <action name="studentUpdate" class="com.changh.sccms.action.user.student.UpdateAction">
+			<result name="success" type="json">
+ 				<param name="root">stu</param>
+ 			</result>
+		</action>
+		<action name="studentModify" class="com.changh.sccms.action.user.student.ModifyAction">
+			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+		</action> 
+		<action name="addStudent" class="com.changh.sccms.action.user.student.AddStudentAction">
+		    <result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+		</action>
+		<!-- 检查用户名 -->
+		<action name="checkUsername" class="com.changh.sccms.action.user.student.CheckUsernameAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 检查email -->
+		<action name="checkEmail" class="com.changh.sccms.action.user.student.CheckEmailAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 获取验证码 -->
+    		<action name="getCode" class="com.changh.sccms.action.user.student.CreateCheckCodeAction">
+    			<result name="success" type="stream">
+    				<param name="inputName">input</param>
+    				<param name="contentType">image/jpeg</param>
+    			</result>
+    	</action>
+		<!-- 检查验证码 -->
+		<action name="checkImage" class="com.changh.sccms.action.user.student.CheckImageAction">
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		
+ 	<!-- 定义教师管理模块的Action -->
+ 		<!-- 教师列表 -->
+ 		<action name="teacherList" method="execute" 
+			class="com.changh.sccms.action.user.teacher.ListAction">
+			<result name="success" type="json">
+				<param name="root">teacherList</param>
+			</result>
+		</action>
+		<!-- load教师信息 -->
+		<action name="loadTeacher" method="execute" 
+			class="com.changh.sccms.action.user.teacher.LoadAction">
+			<result name="success">
+				/cms/jsp/teacher/modifyTchForm.jsp
+			</result>
+		</action>
+		<action name="loadTeacher1" method="execute" 
+			class="com.changh.sccms.action.user.teacher.LoadAction">
+			<result name="success">
+				/cms/jsp/teacher/tchDetail.jsp
+			</result>
+		</action>
+		<!-- 修改教师信息 -->
+		<action name="updateTeacher" method="execute"
+			class="com.changh.sccms.action.user.teacher.UpdateAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>	
+		</action>
+		<action name="updateTeacherImgUrl" method="execute"
+			class="com.changh.sccms.action.user.teacher.UpdateImgUrlAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>	
+		</action>
+		<!-- 添加教师 -->
+		<action name="uploadTchImg" method="execute" class="com.changh.sccms.action.user.teacher.UploadAction">
+			<result name="success">/cms/jsp/teacher/cutface.jsp</result>
+			<result name="success2">/cms/jsp/teacher/cutface2.jsp</result>
+ 			<result name="input">/cms/jsp/teacher/pastsize.jsp</result>
+		</action>
+		<action name="addTeacher" method="execute"
+			class="com.changh.sccms.action.user.teacher.AddAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>	
+		</action>
+		<!-- 删除教师 -->
+		<action name="deleteTeacher" method="execute"
+			class="com.changh.sccms.action.user.teacher.DeleteAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 搜索教师 -->
+		<action name="searchTeacher" method="execute"
+			class="com.changh.sccms.action.user.teacher.SearchAction">
+			<result name="success" type="json">
+				<param name="root">teacherList</param>
+			</result>
+		</action>
+		<!-- 搜索学生 -->
+		<action name="searchStu" method="execute"
+			class="com.changh.sccms.action.user.student.SearchAction">
+			<result name="success" type="json">
+				<param name="root">stuList</param>
+			</result>
+		</action>
+		<!-- 判断制定username的教师是否存在 -->
+		<action name="checkUser" method="execute"
+			class="com.changh.sccms.action.user.teacher.ChechUsernameAction">
+			<result name="success" type="json">
+				<param name="root">find</param>
+			</result>
+		</action>
+		
+		<!-- 定义管理员管理模块的Action -->
+ 		<!-- 管理员列表 -->
+ 		<action name="adminList" method="execute" 
+			class="com.changh.sccms.action.user.administrator.ListAction">
+			<result name="success" type="json">
+				<param name="root">adminList</param>
+			</result>
+		</action>
+		<!-- load管理员信息 -->
+		<action name="loadAdmin" method="execute" 
+			class="com.changh.sccms.action.user.administrator.LoadAction">
+			<result name="success">
+				/cms/jsp/system/modifyAdmForm.jsp
+			</result>
+		</action>
+		<!-- 修改管理员信息 -->
+		<action name="updateAdmin" method="execute"
+			class="com.changh.sccms.action.user.administrator.UpdateAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 修改管理员信息 -->
+		<action name="changeAdminPassword" method="execute"
+			class="com.changh.sccms.action.user.administrator.ChangePasswordAction">
+			<result name="fail">/cms/login.jsp</result>
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 添加管理员 -->
+		<action name="addAdmin" method="execute"
+			class="com.changh.sccms.action.user.administrator.AddAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>	
+		</action>
+		<!-- 删除管理员 -->
+		<action name="deleteAdmin" method="execute"
+			class="com.changh.sccms.action.user.administrator.DeleteAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 搜索管理员 -->
+		<action name="searchAdmin" method="execute"
+			class="com.changh.sccms.action.user.administrator.SearchAction">
+			<result name="success" type="json">
+				<param name="root">AdminList</param>
+			</result>
+		</action>
+		<!-- 判断制定username的管理员是否存在 -->
+		<action name="checkAdmin" method="execute"
+			class="com.changh.sccms.action.user.administrator.ChechUsernameAction">
+			<result name="success" type="json">
+				<param name="root">find</param>
+			</result>
+		</action>
+		<action name="loadStu" class="com.changh.sccms.action.order.LoadStudentAction">
+			<result name="success">/cms/jsp/student/stuDetail.jsp</result>
+		</action>
+		<action name="stuOrder" class="com.changh.sccms.action.user.student.LoadStuIdAction">
+			<result name="success">/cms/jsp/student/order.jsp</result>
+		</action>
+		<action name="search" class="com.changh.sccms.action.user.student.SearchOrderAction">
+			<result name="success" type="json">
+				<param name="root">orderList</param>
+			</result>
+		</action>
+		<!-- 课程记录 -->
+		<action name="studyInfo" class="com.changh.sccms.action.user.student.StudyRecordAction">
+			<result name="success">/cms/jsp/student/study.jsp</result>
+		</action>
+		<action name="studyRecord" class="com.changh.sccms.action.user.student.RecordListAllAction">
+			<result name="success" type="json">
+				<param name="root">studyRecord</param>
+			</result>
+		</action>
+		<action name="examRecord" class="com.changh.sccms.action.user.student.ExamRecordAction">
+			<result name="success" type="json">
+				<param name="root">examRecord</param>
+			</result>
+		</action>
+		<!-- 选课 -->
+		<action name="chooseClassFirst" class="com.changh.sccms.action.user.student.ChooseClassFirstAction">
+			<result name="success">/cms/jsp/student/chooseClass.jsp</result>
+		</action>
+		<!-- 导出  2014.03.21-->
+		<action name="export" class="com.changh.sccms.action.user.student.ExcelExportAction">   
+            <result name="success" type="stream">   
+                <param name="contentType">application/vnd.ms-excel   
+                </param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">   
+                    filename="stuList.xls"  
+                </param>   
+                <param name="bufferSize">1024</param>   
+            </result>
+            <result name="success1">
+            	/cms/jsp/student/exportStuError.jsp
+            </result>   
+        </action>
+        <!-- 重置密码 -->
+        <action name="resetPwd" class="com.changh.sccms.action.user.student.ResetPwdAction">
+			<result name="success" type="json"><param name="root">stuId</param></result>
+		</action>
+         <!-- 重置设备号 -->
+        <action name="resetDeviceId" class="com.changh.sccms.action.user.student.ResetDeviceIdAction">
+			<result name="success" type="json"><param name="root">stuId</param></result>
+		</action>
+		<!-- 增加听课的数量的页面 -->
+		<action name="addListenNumPage" class="com.changh.sccms.action.user.student.AddListenNumPageAction">
+			<result name="success">
+			    /cms/jsp/student/addListenNum.jsp
+			</result>
+		</action>
+		<!-- 增加听课的数量的操作 -->
+		<action name="addListenNum" class="com.changh.sccms.action.user.student.AddListenNumAction">
+			<result name="success" type="json"><param name="root">ok</param></result>
+		</action>
+ 	</package>
+ </struts>

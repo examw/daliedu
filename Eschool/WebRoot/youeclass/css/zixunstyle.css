@@ -1,0 +1,41 @@
+/* CSS Document */
+*{margin:0px; padding:0px; list-style:none;}
+body{padding:0; margin:0; FONT-SIZE: 12px;  FONT-FAMILY: 宋体,Verdana; color:#333333; background:url(../images/bg.jpg) repeat-x;}
+a{color:#000000; text-decoration:none; }
+a:hover{ text-decoration:underline;}
+img{border:0px;}
+.liu_mains{width:960px; height:450px; margin:0 auto; overflow:hidden;margin-top:10px}
+.liu_mains_left{width:80px; height:450px; float:left; display:inline; background:#f6f6f6; overflow:hidden;}
+.liu_mains_center{width:630px; height:450px; float:left; display:inline; margin:0 10px; overflow:hidden;}
+.liu_m_c_left{width:215px; height:175px; float:left; display:inline; background:#cccccc;}
+.liu_m_c_right{width:404px; height:175px; float:right; display:inline;}
+.liu_m_c_right li{width:404px; height:20px; line-height:20px; overflow:hidden; float:left; display:inline; margin-bottom:10px;}
+.liu_m_c_right li a{margin:0 2px; float:left; display:inline; line-height:16px; color:#515d5d;}
+.liu_m_c_right .liu_m_c_r_toutiao{width:400px; font-size:16px; font-weight:bold; color:#d94400; text-align:center; height:25px;}
+.liu_m_c_right .liu_m_c_r_toutiao a{color:#d94400; font-family:"微软雅黑";}
+.liu_m_c_right li .liu_m_c_r_xiangmu{ display:block; width:77px; height:16px; text-align:center; line-height:16px; background:url(../images/liu_abg.jpg) center center; color:#ffffff;}
+.liu_m_c_list{width:630px; height:32px; margin-top:10px; background:#f6f6f6; float:left; display:inline;}
+.liu_m_c_list li{float:left; display:inline; line-height:32px; border-right:1px solid #e6e6e6; padding:0 52px; border-top:1px solid #e6e6e6; border-bottom:1px solid #e6e6e6; cursor:pointer;}
+.liu_m_c_list .liu_m_c_leftli{padding:0 55px 0 56px; border-right:none;}
+.liu_kaoshil{width:630px; float:left; display:inline;}
+.liu_kaoshil tr td{height:29px; line-height:29px; padding:0px 5px;}
+.liu_m_c_list #hgliys0{ background:#ffffff; border-top:1px solid #0085ff; border-bottom:1px solid #ffffff;}
+
+.liu_mains_right{width:228px; height:447px; float:left; display:inline;overflow:hidden; border:1px solid #e6e6e6; border-top:2px solid #0085ff;}
+.liu_mains_right p{height:30px; padding-left:10px; line-height:30px; font-size:14px; font-weight:bold; border-bottom:1px solid #e6e6e6; margin-bottom:10px;}
+.liu_pic1{width:220px; height:100px; overflow:hidden; background:#f6f6f6; margin:0 auto;}
+.liu_picwenzi{width:220px; height:32px; line-height:32px; text-align:center;}
+
+.daohang {width:1010px; margin:4px auto 0 auto; }
+.kccon2 {margin-top:0px;padding-top:0px;}
+.kccon2 ul li{padding:1px 0; height:24px; line-height:24px;}
+.kccon2 .kcb1{width:78px; float:left; background:#5599FF; text-align:center;color:#fff; font-weight:bold;font-family:微软雅黑;font-size:16px;}
+.kccon2 .kcb1 a:link,.kccon .kcb1 a:visited{color:#fff;}
+.kccon2 .kcb1 a:hover,.kccon .kcb1 a:active{color:#FF0;}
+.kccon2 .kcb2{width:920px; float:right;color:#CCC; font-weight:bold;}
+.kccon2 .kcb2 a:link,.kccon .kcb2 a:visited{ color:#041663; font-weight:bold;  background:url(../images/bjan=.png);}
+.kccon2 .kcb2 a:hover,.kccon .kcb2 a:active{color:#f90; font-weight:bold;}
+.kccon2 ul li .kcb2 a {margin-right:20px;font-size:16px;font-family:微软雅黑;width:88px;display:block;float:left;text-align:center;}
+
+
+

@@ -1,0 +1,22 @@
+/* CSS Document */
+body{ background:url(../images/topbg.jpg) repeat-x top; background-color:#f1f1f1;}
+*{margin:0px; padding:0px; list-style:none;}
+body{ background:url(../images/topbg.jpg) repeat-x top; background-color:#f1f1f1; font-size:12px;}
+a{color:#000000; text-decoration:none; }
+a:hover{ text-decoration:underline;}
+img{border:0px;}
+
+.tops{width:1000px; height:30px; margin:0 auto; line-height:30px;}
+.tops li{float:left;}
+.tops li a{margin:0 5px;}
+
+.mains{width:1000px; height:220px; overflow:hidden; margin:0 auto; background:url(../images/mainsbg.jpg) 0px 50px no-repeat; padding-top:45px;}
+.cuowutishi{float:right; display:inline; font-size:40px; font-family:"微软雅黑"; margin-right:66px; margin-top:10px;}
+.fanhuisy{width:665px; float:right; font-size:14px; margin-top:30px;}
+.fanhuisy a{float:left; display:inline; margin-right:45px;}
+.fanhuisy p{float:left; display:inline; line-height:50px;}
+.fenlei{width:968px; border:1px dotted #cccccc; margin:0 auto; padding:15px; overflow:hidden;}
+.fenlei li{line-height:30px;}
+.fenlei li a{margin-right:10px;}
+.fenlei li .dfenlei{font-size:14px; font-weight:bold; color:#2796be; font-family:"微软雅黑";}
+.dibu{width:1000px; margin:0 auto; height:50px; line-height:50px; text-align:center;}

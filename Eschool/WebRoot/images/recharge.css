@@ -1,0 +1,42 @@
+.ctt_tishi {background: none repeat scroll 0 0 #FFFFEA;border: 1px solid #FEDC9C;display: block;font-size: 14px;margin-bottom: 15px;margin-top: 10px;padding: 15px;width: 497px;}
+.ctt_cz {background: none repeat scroll 0 0 #F9F9F9;border: 1px solid #D9D9D9;display: block;height: 110px;padding-left: 12px;padding-top: 18px; width: 515px;}
+div, form, ul, ol, li, span, p, dl, dd, dd {border: 0 none;margin: 0;padding: 0;}
+.ctt_cz dl dt {display: inline;float: left;margin-right: 10px;width: 253px;}
+.cz_dda {margin-right: 10px;width: 135px;}
+.cz_ddb {margin¡ª¡ªleft:3px;width: 85px;}
+.ctt_cz dl dd {display: inline;    float: left;    padding-bottom: 5px;}
+.cz_input {border-color: #868686 #D4D4D4 #D4D4D4 #868686;    border-style: solid;    border-width: 1px;    font-size: 14px;    font-weight: bold;    height: 28px;    line-height: 28px;}
+.ctt_cz span {clear: both;color: #FF0000;float: right;    padding-right: 15px;    padding-top: 10px;}
+.tishi {background: none repeat scroll 0 0 #FFFFE9;    border: 1px solid #FEDA99;    clear: both;    color: #F25500;    display: block;    line-height: 22px;    margin-bottom: 10px;    padding: 5px 3px 5px 3px;}
+.cz_sp {
+    background: none repeat scroll 0 0 #F9F9F9;
+    border: 1px solid #D9D9D9;
+    display: block;
+    height: 88px;
+    margin-bottom: 30px;
+    padding-left: 12px;
+    padding-top: 18px;
+    width: 515px;
+}
+.cz_sp dl dt {
+    display: inline;
+    float: left;
+    margin-right: 10px;
+    width: 253px;
+}
+.cz_sp dl dd {
+    display: inline;
+    float: left;
+    padding-bottom: 5px;
+}
+.cz_dda {
+    margin-right: 10px;
+    width: 135px;
+}
+.ctt_nqq h2 {
+    color: #525252;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}

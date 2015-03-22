@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="order" namespace="/order" 
+ 			extends="sccms-default">
+ 	<!-- 定义订单管理模块的Action -->
+ 		<action name="orderList" method="execute" 
+			class="com.changh.sccms.action.order.ListAction">
+			<result name="success" type="json">
+				<param name="root">orderList</param>
+			</result>
+		</action>
+		<action name="itemList"  method="execute" 
+			class="com.changh.sccms.action.order.ItemsListAction">
+			<result name="success" type="json">
+				<param name="root">itemList</param>
+			</result>
+		</action>
+		<action name="beforePay" class="com.changh.sccms.action.order.BeforePayAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="load" method="execute"
+			class="com.changh.sccms.action.order.LoadAction">
+			<result name="success">/cms/jsp/order/manualPay.jsp</result>
+			<result name="success1">/cms/jsp/order/updateFromSearch.jsp</result>
+			<result name="success2">/cms/jsp/order/detail.jsp</result>
+		</action>
+		<action name="orderDetail" class="com.changh.sccms.action.order.OrderDetailAction">
+			<result name="success">/cms/jsp/order/detail.jsp</result>
+		</action>
+		<action name="search" class="com.changh.sccms.action.order.SearchAction">
+			<result name="success" type="json">
+				<param name="root">orderList</param>
+			</result>
+		</action>
+		<action name="searchByPName" class="com.changh.sccms.action.order.SearchByPNameAction">
+			<result name="success" type="json">
+				<param name="root">orderList</param>
+			</result>
+		</action>
+		 <action name="update" class="com.changh.sccms.action.order.UpdateAction">
+		 	<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+		</action>
+		<action name="loadForCancel" class="com.changh.sccms.action.order.LoadForCancel">
+			<result name="success">/cms/jsp/order/cancelOrder.jsp</result>
+		</action>
+		<action name="checkSendBack" class="com.changh.sccms.action.order.CheckSendBackAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action> 
+		<action name="cancelOrder" class="com.changh.sccms.action.order.CancelOrderAction">
+			<result name="success" type="redirect">/order/orderDetail?orderId=${orderId}</result>
+		</action> 
+ 		<action name="wantInvoice" class="com.changh.sccms.action.order.WantInvoiceAction">
+			<result name="success" >/cms/jsp/send/addSend.jsp
+			</result>
+		</action> 
+		<!-- 修改学员现金账户1 -->
+		<action name="loadForModifyCash" class="com.changh.sccms.action.order.LoadForModifyCashAction">
+			<result name="success" >/cms/jsp/order/modifyCash.jsp
+			</result>
+		</action>
+		<!-- 修改学员现金账户2 -->
+		<action name="modifyCash" class="com.changh.sccms.action.order.ModifyCashAction">
+			<result name="success" type="redirect">/order/orderDetail?orderId=${orderId}</result>
+			<result name="success1" type="redirect">/order/loadStu?stuId=${stuId}</result>
+			<result name="error">/cms/error/error2.jsp</result>
+		</action>
+		<!-- 修改订单价格 -->
+		<action name="modifyPrice" class="com.changh.sccms.action.order.ModifyPriceAction">
+			<result name="success" type="redirect">/order/orderDetail?orderId=${orderId}</result>
+		</action>
+		<!-- 取消订单2 -->
+		<action name="cancelOrder2" class="com.changh.sccms.action.order.OrderDetailAction">
+			<result name="success" >/cms/jsp/order/cancelOrder2.jsp</result>
+		</action>
+		<!-- 申请发票 -->
+		<action name ="applyInvoice" class="com.changh.sccms.action.order.ApplyInvoiceAction">
+			<result name="success" type="redirect">/order/orderDetail?orderId=${orderId}</result>
+			<result name="error">/cms/error/error2.jsp</result>
+		</action>
+		<!-- 某订单的交易详情 -->
+		<action name="tradeDetail" class="com.changh.sccms.action.order.TradeDetailAction">
+			<result name="success">/cms/jsp/order/tradeList.jsp</result>
+		</action>
+		<!-- 开通课程 -->
+		<action name="manualPay" class="com.changh.sccms.action.order.ManualPayAction">
+			<result name="success" type="redirect">/order/orderDetail?orderId=${order.orderId}</result>
+			<result name="error">/cms/error/error2.jsp</result>
+		</action>
+		<!-- 学员详细信息 -->
+		<action name="loadStu" class="com.changh.sccms.action.order.LoadStudentAction">
+			<result name="success">/cms/jsp/order/stuDetail.jsp</result>
+		</action>
+		<!-- 管理员直接选课开课 -->
+		<action name="createOrder" class="com.changh.sccms.action.order.CreateOrderAction">
+			<result name="success" type="json">
+				<param name="root">data</param>
+			</result>
+		</action> 
+		<!-- 学习卡扣费1 -->
+		<action name="loadForModifyCard" class="com.changh.sccms.action.order.LoadForModifyCardAction">
+			<result name="success" >/cms/jsp/order/modifyCard.jsp
+			</result>
+		</action>
+		<!-- 修改学员现金账户2 -->
+		<action name="modifyCard" class="com.changh.sccms.action.order.ModifyCardAction">
+			<result name="success" type="redirect">/order/orderDetail?orderId=${orderId}</result>
+			<result name="success1" type="redirect">/order/loadStu?stuId=${stuId}</result>
+			<result name="error">/cms/error/error2.jsp</result>
+		</action>
+ 	</package>
+ </struts>

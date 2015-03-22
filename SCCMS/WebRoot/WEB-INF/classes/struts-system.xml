@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	
+ 	<package name="system" namespace="/system" 
+ 			extends="sccms-default">
+ 	<!-- 定义登录的action -->
+ 		<action name="index" class="com.changh.sccms.action.system.CheckLoginAction">
+ 			<result name="success">/cms/login.jsp</result>
+ 			<!-- 已经登录，直接跳转到main页面-->
+ 			<result name="success2" type="redirect">/system/main</result>
+ 		</action>
+ 		<action name="main" class="com.changh.sccms.action.system.CheckLoginAction">
+ 			<result name="success2">/cms/main1.jsp</result>
+ 			<!-- 没有登录跳到登录界面 -->
+ 			<result name="success">/cms/login.jsp</result>
+ 		</action>
+ 		<action name="login" class="com.changh.sccms.action.system.LoginAction">
+ 			<result name="success" type="json">
+ 				<param name="root">result</param>
+ 			</result>
+ 		</action>
+ 	<!-- 登出 -->
+ 		<action name="logout" class="com.changh.sccms.action.system.LogoutAction">
+ 			<!-- 跳转到登录界面 -->
+ 			<result name="success">/cms/login.jsp</result>
+ 		</action>
+ 		
+ 	<!-- 定义学习卡相关操作的action -->
+ 		<!-- 列表 -->
+ 		<action name="cardList" class="com.changh.sccms.action.card.ListAction">
+ 			<result name="success" type="json">
+ 				<param name="root">cardList</param>
+ 			</result>
+ 		</action>
+ 		<!--按id搜索-->
+ 		<action name="searchCard" class="com.changh.sccms.action.card.SearchAction">
+ 			<result name="success" type="json">
+ 				<param name="root">cardList</param>
+ 			</result>
+ 		</action>
+ 		<!--  -->
+ 		<action name="createCards" class="com.changh.sccms.action.card.CreateAction">
+ 			<result name="success">
+ 				/cms/jsp/system/cardList.jsp
+ 			</result>
+ 		</action>
+ 		<!-- 直接生成导出 -->
+ 		<action name="excel" class="com.changh.sccms.action.card.CardExcelAction">   
+            <result name="success" type="stream">   
+                <param name="contentType">application/vnd.ms-excel   
+                </param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">   
+                    filename="cardList.xls"  
+                </param>   
+                <param name="bufferSize">1024</param>   
+            </result>   
+        </action>   
+        <!-- 搜索导出 -->
+        <action name="export" class="com.changh.sccms.action.card.ExcelExportAction">   
+            <result name="success" type="stream">   
+                <param name="contentType">application/vnd.ms-excel   
+                </param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">   
+                    filename="cardList.xls"  
+                </param>   
+                <param name="bufferSize">1024</param>   
+            </result>
+            <result name="success1">
+            	/cms/jsp/system/exportCardError.jsp
+            </result>   
+        </action>   
+        <!--菜单管理 -->
+        <!-- 主菜单 -->
+        <action name="mainMenuList" class="com.changh.sccms.action.system.MainMenuListAction">
+ 			<result name="success" type="json">
+ 				<param name="root">obj</param>
+ 			</result>
+ 		</action>
+ 		<!-- 子菜单 -->
+ 		<action name="subMenuList" class="com.changh.sccms.action.system.SubMenuAction">
+ 			<result name="success" type="json">
+ 				<param name="root">menuMap</param>
+ 			</result>
+ 		</action>
+ 		<!-- 全部菜单 -->
+        <action name="menuList" class="com.changh.sccms.action.system.MenuAction">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		
+ 		<!--图片 -->
+ 		<action name="imageList" class="com.changh.sccms.action.system.ImagesAction">
+ 			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 		<!-- 添加或者修改 -->
+ 		<action name="saveOrUpdate" class="com.changh.sccms.action.system.SaveOrUpdateMenuAction">
+ 			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 		<!--删除菜单  -->
+ 		<action name="deleteMenu" class="com.changh.sccms.action.system.DeleteMenuAction">
+ 			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 		<!-- 角色列表 -->
+ 		<action name="roleList" class="com.changh.sccms.action.system.RoleAction">
+ 			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 		<action name="role" class="com.changh.sccms.action.system.RoleListAction">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		<!--角色添加  -->
+ 		<action name="saveRole" class="com.changh.sccms.action.system.SaveOrUpdateRoleAction">
+ 			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 		<!-- 角色删除 -->
+ 		<action name="deleteRole" class="com.changh.sccms.action.system.DeleteRoleAction">
+ 			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+ 		</action>
+ 		<action name="menuTree" class="com.changh.sccms.action.system.MenuAllAction">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		<!--统计  -->
+ 		<action name="chart" class="com.changh.sccms.action.system.ChartAction">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		<!-- 网站基本信息 -->
+ 		<action name="webInfo" class="com.changh.sccms.action.system.WebInfoAction">
+ 				<result name="success">/cms/jsp/system/webInfo.jsp</result>
+ 		</action>
+ 		<action name="saveOrUpdateWebInfo" class="com.changh.sccms.action.system.SaveOrUpdateWebInfoAction">
+ 			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+ 		</action>	
+ 		<action name="selectLog" method="execute" 
+			class="com.changh.sccms.action.system.SelectAction">
+			<result name="success" type="json">
+				 <param name="root">logMap</param>
+			</result>
+		</action>
+		<action name="searchLog" method="execute" 
+			class="com.changh.sccms.action.system.SearchAction">
+			<result name="success" type="json">
+				 <param name="root">logList</param>
+			</result>
+		</action>
+		<action name="deleteLog" method="execute" 
+			class="com.changh.sccms.action.system.DeleteLogAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 发布 -->
+		<action name="release" method="doRelease" 
+			class="com.changh.sccms.action.release.ReleaseAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		
+		<!--  -->
+		<action name="getRecordList" class="com.changh.sccms.action.card.GetRecordList">
+			<result name="success">/cms/jsp/system/rechargeRecordList.jsp</result>
+		</action>
+		<action name="recordList" class="com.changh.sccms.action.card.RechargeRecordListAction">
+			<result name="success" type="json">
+				 <param name="root">map</param>
+			</result>
+		</action>
+	</package>
+ </struts>

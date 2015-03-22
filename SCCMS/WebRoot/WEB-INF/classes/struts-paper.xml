@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="paper" namespace="/paper" extends="json-default">
+		<!-- 定义考试管理模块的Action -->
+		<!-- 某科目下所有考卷列表 -->
+		<action name="paperList" method="execute"
+			class="com.changh.sccms.action.paper.PaperListAction">
+			<!-- for grid -->
+			<result name="success" type="json">
+				<param name="root">paperList</param>
+			</result>
+			<!-- for select -->
+			<result name="success1" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="searchPaper" method="execute"
+			class="com.changh.sccms.action.paper.SearchPaperAction">
+			<!-- for grid -->
+			<result name="success" type="json">
+				<param name="root">paperList</param>
+			</result>
+		</action>
+		<!-- 添加试卷 -->
+		<action name="addPaper" method="execute"
+			class="com.changh.sccms.action.paper.AddPaperAction">
+			<result name="success">/cms/jsp/exam/paperList.jsp?examId=${paper.paperExamId}
+			</result>
+		</action>
+		<!-- 试卷详情1 -->
+		<action name="paperDetail" method="execute"
+			class="com.changh.sccms.action.paper.LoadPaperAction">
+			<result name="success">/cms/jsp/exam/paperDetail.jsp</result>
+		</action>
+			<!-- 试卷详情2 -->
+		<action name="questionList" method="execute"
+			class="com.changh.sccms.action.paper.QuestionListAction">
+			<result name="success" type="json">
+				<param name="root">questionList</param>
+			</result>
+			</action>
+		<!-- 搜索题目 -->
+		<action name="searchQuestion" method="execute"
+			class="com.changh.sccms.action.paper.SearchQuestionAction">
+			<result name="success" type="json">
+				<param name="root">questionList</param>
+			</result>
+			</action>
+		<!-- 加载试卷，用于修改试卷属性 -->
+		<action name="loadPaper" method="execute"
+			class="com.changh.sccms.action.paper.LoadPaperAction">
+			<result name="success">/cms/jsp/exam/modifyPaper.jsp</result>
+		</action>
+		<!-- 修改试卷 -->
+		<action name="updatePaper" method="execute"
+			class="com.changh.sccms.action.paper.UpdatePaperAction">
+			<result name="success">/cms/jsp/exam/paperList.jsp?examId=${paper.paperExamId}
+			</result>
+		</action>
+		<!-- 检查PaperName是否重复,为真表示可以用 -->
+		<action name="checkPaperName"
+			class="com.changh.sccms.action.paper.CheckPaperNameAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 删除试卷的大题 -->
+		<action name="deleteRule" class="com.changh.sccms.action.paper.DeleteRuleAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 删除整张试卷 -->
+		<action name="deletePaper" class="com.changh.sccms.action.paper.DeletePaperAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 准备加考题 -->
+		<action name="prepareAdd" method="execute"
+			class="com.changh.sccms.action.paper.PrepareAddQuestionAction">
+			<result name="success1">/cms/jsp/exam/addQuestion.jsp</result>
+			<result name="success">/cms/jsp/exam/batchAddQuestion.jsp
+			</result>
+		</action>
+		<!-- 检查添加的小题是否重复,为真表示可以用 -->
+		<action name="checkRepeat"
+			class="com.changh.sccms.action.paper.CheckRepeatQuestionAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 添加考题 -->
+		<action name="addQuestion"
+			class="com.changh.sccms.action.paper.AddQuestionAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">prepareAdd</param>
+				<param name="ruleId">${question.questRuleId}</param>
+				<param name="link">${link}</param>
+				<param name="actionFlag">${actionFlag}</param>
+			</result>	
+		</action>
+		<!-- 加载考题,用于修改 -->
+		<action name="loadQuestion" class="com.changh.sccms.action.paper.LoadQuestionAction">
+			<result name="success">/cms/jsp/exam/modifyQuestion.jsp</result>
+			<result name="success1">/cms/jsp/exam/problemDetail.jsp</result>
+			<result name="notFind">/cms/jsp/exam/notFind.jsp</result>
+		</action>
+		<!-- 修改考题 -->
+		<action name="updateQuestion" class="com.changh.sccms.action.paper.UpdateQuestionAction">
+			<result name="success" type="redirectAction">
+				<param name="actionName">paperDetail</param>
+				<param name="paperId">${question.questPaperId}</param>
+				<param name="actionFlag">${actionFlag}</param>
+			</result>
+		</action>
+		<!-- 删除考题 -->
+		<action name="deleteQuestion" class="com.changh.sccms.action.paper.DeleteQuestionAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 设置连题属性 -->
+		<action name="setLink" method="setLink"
+			class="com.changh.sccms.action.paper.SetQuestionLinkAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 取消连题属性 -->
+		<action name="cancelLink" method="cancelLink"
+			class="com.changh.sccms.action.paper.SetQuestionLinkAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 批量加题1,从txt文件 -->
+		<action name="batchAddQuestion" class="com.changh.sccms.action.paper.AddQuestionFromFileAction">
+			<result name="success" type="redirect">/paper/paperDetail?paperId=${paperId}</result>
+		</action>
+		<!-- 批量加题2,从editor -->
+		<action name="batchAddQuestion2" class="com.changh.sccms.action.paper.BatchAddFromEditorAction">
+			<result name="success" type="redirect">/paper/paperDetail?paperId=${paperId}</result>
+		</action>
+		<!-- show paper -->
+		<action name="showPaper" method="execute"
+			class="com.changh.sccms.action.paper.LoadPaperAction">
+			<result name="success">/cms/jsp/exam/paper.jsp</result>
+		</action>
+		<action name="qListOfRule" method="execute"
+			class="com.changh.sccms.action.paper.QuestionListOfRuleAction">
+			<result name="success">/cms/jsp/exam/eachProblem.jsp</result>
+		</action>
+		<!-- 纠错列表 -->
+		<action name="errorList" method="execute" class="com.changh.sccms.action.paper.QuestionErrorListAction">
+			<result name="success" type="json">
+				<param name="root">errorList</param>
+			</result>
+		</action>
+		<action  name="loadError" 
+				method="execute" class="com.changh.sccms.action.paper.LoadErrorAction">
+			<result name="success" >/cms/jsp/exam/copeError.jsp</result>
+			<result name="success1" >/cms/jsp/exam/errorDetail.jsp
+			</result>
+		</action>
+		<action name="copeError" method="execute" class="com.changh.sccms.action.paper.CopeErrorAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+	</package>
+</struts>

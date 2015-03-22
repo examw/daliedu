@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="course" namespace="/course" 
+ 			extends="json-default">
+ 		<action name="addNote" class="com.changh.eschool.action.course.AddNoteAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="listNote" class="com.changh.eschool.action.course.ListNodeAction">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="deleteNote" class="com.changh.eschool.action.course.DeleteNoteAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="find" class="com.changh.eschool.action.course.HotAction">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="findHot" class="com.changh.eschool.action.course.BestAction">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<!-- 播放记录list -->
+		<action name="studyRecordList" class="com.changh.eschool.action.course.RecordListAction">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<!-- 删除记录 -->
+		<action name="studyRecordDelete" class="com.changh.eschool.action.course.DeleteStudyRecordAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		
+ 	</package>
+ </struts>

@@ -1,0 +1,52 @@
+div, form, ul, ol, li, span, p, dl, dd, dd { margin: 0; padding: 0; border: 0; }
+ul, li { list-style: none; }
+.pop_back { position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: black; opacity: 0.3; filter: alpha(opacity=30); display: none;z-index:100; }
+.pop_back body,.pop_back html{margin:0;padding:0;}
+.pop_box { background: #fff;position: absolute; font-size: 12px; display: none; border: 1px solid #aaaaaa;left:50%;top:50%; z-index:100;}
+.pop_box .title {background: url(../images/fd_01.gif) repeat-x; height: 33px; line-height: 33px;position:relative; display: block; font-weight: bold; font-size: 14px; padding-left: 10px; }
+.pop_box .btncls{position:absolute;right:10px;top:8px;z-index:100;}
+.btncls img{border:none;cursor:pointer;}
+.pop_pre{text-align:center;padding:40px 0 60px;font-size:14px;}
+/*µÇÂ¼´°*/
+.login_box { width: 477px;}
+.login_box a { text-decoration: none; }
+.login_box img { border: none; }
+.login_nr { width: 384px; padding-left: 53px; height: 219px; border-bottom: 1px solid #d6d6d6; margin-left: auto; margin-right: auto; }
+.login_nr ul li { clear: both; overflow: hidden; }
+input { text-indent: 8px; }
+.login_nr ul li.li_one { overflow: inherit; }
+.login_nr ul li dl dt { width: 58px; float: left; font-size: 14px; padding-top: 7px; }
+.login_nr ul li dl dd { float: left; }
+.text_one { border-top: 1px solid #636363; border-left: 1px solid #636363; border-right: 1px solid #c1c1c1; border-bottom: 1px solid #c1c1c1; background: url(../images/text_01.gif) repeat-x; line-height: 28px; font-size: 18px; font-weight: bold; }
+.bg { background: #ffffce; }
+.text_kg_a { width: 195px; height: 28px; }
+.text_kg_b { width: 95px; height: 28px; }
+.em_one { font-size: 18px; padding-left: 10px; line-height: 33px; *line-height:34px;
+font-weight: bold; }
+.em_two { font-size: 12px; color: #666666; padding-left: 10px; line-height: 33px; *line-height:34px;
+}
+.em_two a { color: #00f; text-decoration: underline; }
+.em_three { color: #666666; padding-top: 2px; display: block; padding-left: 5px; *padding-top:4px;
+_padding-top: 4px; }
+.mrg_18 { margin-bottom: 18px; *margin-bottom:13px;
+_margin-bottom: 0px; }
+.mrg_15 { padding-top: 15px; *padding-top:9px;
+_padding-top: 0px; }
+.tishi_one { line-height: 31px; color: #666666; padding-left: 10px; width: 85px; height: 31px; }
+.tishi_one a { color: #00f; text-decoration: underline; }
+.tishi_one a:hover { text-decoration: underline; }
+.tishi_one_bg { background: url(../images/text_10.gif) no-repeat 10px 6px; }
+.cw_tsa { height: 25px; line-height: 25px; _height: 35px; _line-height: 35px; }
+.cw_ts { _margin-top: -20px; }
+.red { color: red; font-size: 14px; }
+.wz { width: 437px; height: 30px; line-height: 30px; color: #666666; margin-left: auto; margin-right: auto; padding-top: 5px; }
+.wz_login { width: 437px; height: 40px; line-height: 40px; color: #666666; margin-left: auto; margin-right: auto; }
+.wz_login ul li { font-size: 12px; line-height: 29px; float: left; }
+.wz_login ul li span { color: #666666; }
+.wz_login ul li span a { color: #0000ff; font-weight: bold; text-decoration: underline; }
+.wz_login ul li p { font-weight: bold; color: #949393; }
+.wz_login ul li div { position: relative; padding-left: 30px; }
+.wz_login ul li div em { position: absolute; left: 0px; margin-left: 9px; *margin-left:9px;
+_margin-left: -22px; margin-top: 4px; *margin-top:-2px;
+_margin-top: -2px; }
+.wz_login ul li div a { color: #0078c5; }

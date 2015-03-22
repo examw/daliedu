@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,textarea,p{margin:0;padding:0}
+img{border:0}
+ol,ul{list-style:none}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+body{height:100%;color:#333;background:#73CFF1 url(wrapbg.jpg) center top no-repeat;font-size: 12px;line-height: 1.75;}
+a { color:#0a8cd2; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }.clearfix { display: block; }
+.clear { clear:both; height:0; font:0/0 Arial; visibility:hidden; }
+
+#headWrap{position:relative;z-index:2;width:800px;height:88px;margin:0 auto}
+#logo{position:absolute;top:20px;width:212px;height:46px;overflow:hidden;cursor:pointer}
+#logo a{display:block;width:212px;height:46px;text-indent:-9999em; background-image:url(logo.png);_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=crop,src='../images/logo.png');}
+.topMenu{position:absolute;top:2px;right:5px;min-width:600px;_width:600px;height:29px;overflow-y:hidden;padding-right:5px;text-align:right;background-position:right 0}
+
+#mainWrapper{position:relative;z-index:1;width:800px; height:490px; margin:0px auto 10px auto;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;background:#FAFAFA;background-position:right top;background-repeat:repeat-y;}
+.pageTit{ background-image:url(regBg.png); background-repeat:no-repeat; height:56px; padding: 25px 0 0 53px; background-position: 0 0; clear:both;}
+.pageTit h2 { margin-bottom:3px; line-height:20px; color:#1E85AE; font-family: "MicroSoft YaHei","SimHei"; font-size:20px}
+.pageTit .desc { color:#1E85AE}
+
+
+.W_reg_info{background:#fafafa url("bg_vline.png")  no-repeat 550px 0; clear:both;}
+.W_reg_form{float:left;width:550px;margin:40px 0 0 15px;_display:inline;}
+.W_reg_form .tit{width:120px;float:left;font-size:14px;line-height:30px;text-align:right;}
+.W_reg_form .inp{float:left; width:220px;}
+.W_reg_form .tips{float:left;*width:210px;height: 28px;line-height: 28px;}
+.W_input,.W_inputStp { border:1px solid #ccc; border-radius:2px; height:28px; height:20px\9; padding:0 0 0 5px; padding:4px 0 4px 5px\9; vertical-align: middle;vertical-align:top\9; color:#808080; -webkit-box-shadow:1px 1px 1px 0px #eaeaea inset; -moz-box-shadow:1px 1px 1px 0px #eaeaea inset;box-shadow:1px 1px 1px 0px #eaeaea inset; line-height:20px;}
+.W_reg_form .info_list{margin:0 0 12px;position:relative;}
+.W_reg_form .tit{float:left;font-size:14px;line-height:30px;text-align:right;}
+.W_reg_form .tit i{color:#F00;font-family:"SimSun";padding-right:4px; font-style:normal;}
+.W_reg_form .inp{}
+.W_reg_form .inp .W_input{font-size:14px;height:30px;height:22px\9;width:195px;}
+.W_reg_form .verify input.W_input{width:80px;}
+.W_reg_form .succ,.W_reg_form .error,.W_reg_form .warn{background:url(ico_warn.png) no-repeat;_background:url("ico_warn.gif") no-repeat; line-height:34px; padding-left:20px;}
+.W_reg_form .succ{background-position: 0px 5px;}
+.W_reg_form .error{ background-position: 0px -46px; color:#e64141;}
+.W_reg_form .warn{ background-position: 0px -100px; color: #666;}
+
+.W_reg_form .info_submit{margin:40px 0 10px;}
+.info_submit .inp{ padding-left:120px; float:left;}
+.info_submit .inp p{ padding:15px 0px;}
+.W_btn_big,.W_btn_big span{cursor:pointer;background:url("btn_big.png") no-repeat;_background-image:url("btn_big.gif");color:#fff;display:inline-block;padding:0 0 0 2px;height:40px;line-height:39px;font-size:20px;font-family: Microsoft Yahei,Simsun,Arial,sans-serif;width:190px;}
+.W_btn_big span{background-position:right -40px;padding:0 5px 0 4px;min-width:35px;text-align:center;}
+.W_btn_big:hover{background-position:0 -80px;text-decoration:none;}.W_btn_big:hover span{background-position:right -120px;}
+
+.W_reg_sidebar{float:right;width:200px;margin:30px 30px 0 0;font-size:14px;line-height:22px;_display:inline;}
+.W_reg_sidebar .line{border-bottom:1px dotted #ccc;}
+.W_reg_sidebar .p1{margin:0 0 14px;padding:0 0 6px;word-break:break-all;word-wrap:break-word; color:#666;}
+.W_reg_sidebar .p2{font-size:16px;margin:0 0 5px;}
+.Blank{ height:110px; clear:both; border-top:#CCC solid 1px; margin:20px 0px 0px 25px; float:left; width:500px;}
+.Blank p{ margin:10px;}
+.Blank img{ margin-left:30px;}
+
+#loginbtn {width: 140px; height: 40px; border: 0px none; font-size: 20px; color: rgb(255, 255, 255); text-shadow: 0px 0px 2px rgb(92, 145, 20); font-family: Microsoft Yahei,Simsun,Arial,sans-serif; overflow: hidden; cursor: pointer; background-position: 0px 0px; outline: medium none;padding: 0px;border-radius: 3px 3px 3px 3px;background: url("lg_btn.png") no-repeat scroll 0% 0% rgb(141, 186, 54);}
+
+.footer{width:96%; margin:0px auto; color:#666; text-align:center;font-family:Arial;}
+
+.countDownBt-active {background: url("countDownBt_act.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0); border: 0 none;color: #FFFFFF;cursor: pointer;font-weight: 700;height: 29px;width: 99px;}
+/*选择框样式*/
+.select_border{height:29px;*background:#fff;background:#fff;*padding:4px;*height:20px;float:left;}
+.container{*border:0;*position:relative;*height:18px;*overflow:hidden;}
+.select{border:1px solid #CCCCCC;padding:4px 3px;font-size:12px;height:30px;width:150px;*width:52px;margin:-1px;}
+.select option{padding:5px 5px;}
+.select_border,.container {*width:50px;}

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="order" namespace="/order" 
+ 			extends="eschool-default">
+	<action name="createOrder" class="com.changh.eschool.action.order.CreateOrderAction">
+		<result name="success" type="json">
+			<param name="root">data</param>
+		</result>
+	</action>
+	<action name="orderDetail" class="com.changh.eschool.action.order.OrderDetailAction">
+		<interceptor-ref name="userLoginStack"></interceptor-ref>
+		<result name="success">/cart/createOrder.jsp</result>
+	</action>
+	<action name="preparePay" class="com.changh.eschool.action.order.PreparePayAction">
+		<interceptor-ref name="userLoginStack"></interceptor-ref>
+		<result name="zfb_success">/pay/alipay/alipayto.jsp</result>
+		<result name="wy_success">/pay/chinabank/Send.jsp</result>
+		<result name="cft_success">/pay/tenpay/payRequest.jsp</result>
+		<result name="success">/cart/createOrder.jsp</result>
+		<result name="fail">/error/error2.jsp</result>
+	</action>
+	<!-- 支付宝支付 -->
+ 	<action name="alipay" class="com.changh.eschool.action.order.PaySuccessAction">
+ 		<result name="success" type="dispatcher">/pay/alipay/success.jsp</result>
+ 		<result name="fail">/pay/alipay/fail.jsp</result>
+ 	</action>
+ 	<action name="alipay2" class="com.changh.eschool.action.order.AlipayAction">
+ 		<result name="success">/pay/alipay/success.jsp</result>
+ 		<result name="fail">/pay/alipay/fail.jsp</result>
+ 	</action>
+ 	<!-- 网银支付 -->
+ 	<action name="bankpay" class="com.changh.eschool.action.order.BankPayAction">
+ 		<result name="success">/pay/alipay/success.jsp</result>
+ 		<result name="fail">/pay/alipay/fail.jsp</result>
+ 	</action>
+ 	<!-- 财付通支付 -->
+ 	<action name="tenpay" class="com.changh.eschool.action.order.TencentPayAction">
+ 		<result name="success">/pay/alipay/success.jsp</result>
+ 		<result name="fail">/pay/alipay/fail.jsp</result>
+ 	</action>
+ 	<!-- 学习卡支付 -->
+ 	<action name="cardPay" class="com.changh.eschool.action.order.CardPayAction">
+ 		<interceptor-ref name="userLoginStack"></interceptor-ref>
+ 		<!-- 没有支付完成，继续返回支付 -->
+ 		<result name="success1" type="redirect">/order/orderDetail?orderId=${orderId}</result>
+ 		<!-- 支付完成，进入个人中心 -->
+ 		<result name="success" type="redirect">/member/center</result>
+ 	</action>
+ 	<!-- 网银大额分次支付 -->
+ 	<action name="multipaypay" class="com.changh.eschool.action.order.MultipayAction">
+ 		<result name="success"  type="redirect">/order/orderDetail?orderId=${orderId}
+ 			<param name="payType">multipay</param>
+ 		</result>
+ 		<result name="fail">/pay/alipay/fail.jsp</result>
+ 	</action>
+ 	<!-- ////////////////////////// -->
+ 	</package>
+ 	
+ </struts>

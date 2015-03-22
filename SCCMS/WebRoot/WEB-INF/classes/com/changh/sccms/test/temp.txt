@@ -1,0 +1,13 @@
+<tr id='ruleTr'"+i+"><td rowspan='2'align='center'>第<span id='ruleNo'"+i+">1</span>大题<input type='hidden' id='txtRuleNo'"+i+" value='"+i+"'></td><td height='30px'>&nbsp;标题:<input type='text' id='title_a'"+i+" onblur='checkNull(this,$(\"#ruleInfo\")'>&nbsp;说明:<input type='text'id='title_b'"+i+" style='width:400px' onblur='checkNull(this,$(\"#ruleInfo\")'><input type='hidden' id='ruleTitle'"+i+"></td><td style='width:40px'align='center'rowspan='2'><a onclick='delRuleTr("+i+")'>删除</a></td></tr><tr><td height='30px'><span style='margin-left:15px'>共&nbsp;<input type='text'size='3'>题&nbsp;每题：<input type='text'value=1 size='3'>分</span><span style='margin-left:20px'>&nbsp;题型：<select><option value=1>单选题</option><option value=2>多选题</option><option value=3>判断题</option><option value=4>问答题</option></select>&nbsp;评分规则：<select><option value=1>无</option><option value=2>少选得分</option><option value=3>答错扣分</option></select><input type='text'value=''size='3'>分</span></td></tr>
+
+
+'<div id="List_Div" style="float:left; margin-left:30px">正确答案：</div>'
+               
+            
+'&nbsp;本题选项个数：<input name="List_Num" type="text" value="'+${question.questOptionNum}+'" size="5" maxlength="2" id="list_num"/><input type="button" name="List" value="设定" onClick="ChooseSelect($('#list_num').val(),'radio');"/><span id="msg1" style="margin-left:10px;color:red">&nbsp;</span>'
+
+<div id="List_Div" style="float:left; margin-left:30px">正确答案： √<input type="radio" name="List_Select" value="T" />×<input type="radio" name="List_Select" value="F" /><input name="question.questOptionNum" value="2" type="hidden"></div>
+
+ <label for="List_Select572438[1]" class="input_select">√ <input id="List_Select572438[1]" type="radio" name="List_Select572438" value="1" onclick="SaveAnswer(572438,2);" /></label>&nbsp;&nbsp;&nbsp;&nbsp;<label for="List_Select572438[2]" class="input_select">× <input id="List_Select572438[2]" type="radio" name="List_Select572438" value="0" onclick="SaveAnswer(572438,2);" /></label>&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+ <div class="main1" id="ruleDiv'+rid+'"><div class="RulesTitle'+rid+'">${ruleList[0].ruleTitle }</div><div id="problems'+rid+'"></div></div>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="package" namespace="/package" 
+ 			extends="sccms-default">
+ 		 <action name="classPackageList" method="execute" 
+			class="com.changh.sccms.action.classPackage.PackageListAction">
+			<result name="success" type="json">
+				 <param name="root">classPackageMap</param>
+			</result>
+		</action> 
+		<action name="classPackageTree" method="execute" 
+			class="com.changh.sccms.action.classPackage.PackageCategoryTreeAction">
+			<result name="success" type="json">
+				 <param name="root">list</param>
+			</result>
+		</action> 
+		<action name="classPackage" method="execute" 
+			class="com.changh.sccms.action.classPackage.ClassPackageAction">
+			<result name="success" >/cms/jsp/lesson/classPackage.jsp</result>
+		</action> 
+		<!--套餐类别 -->
+		<action name="packageCategory" method="execute" class="com.changh.sccms.action.classPackage.PackageCategoryAction">
+			<result name="success" >/cms/jsp/lesson/packageCategoryTree.jsp</result>
+		</action>
+		<action name="packageCategoryList" method="execute" 
+			class="com.changh.sccms.action.classPackage.ListAction">
+			<result name="success" type="json">
+				 <param name="root">packageCategoryMap</param>
+			</result>
+		</action>
+		<!-- 考试下面的所有套餐 -->
+		<action name="packageList" method="execute" 
+			class="com.changh.sccms.action.classPackage.ClassPackageListAction">
+			<result name="success" type="json">
+				 <param name="root">packageMap</param>
+			</result>
+		</action>
+		<action name="gradeList" method="execute" 
+			class="com.changh.sccms.action.classPackage.GradeListAction">
+			<result name="success" type="json">
+				 <param name="root">gradeMap</param>
+			</result>
+		</action>
+		<action name="dealList" class="com.changh.sccms.action.classPackage.DealListAction">
+			<result name="success" type="json">
+				<param name="root">dealList</param>
+			</result>
+		</action>	
+
+		<action name="classPackageAdd" class="com.changh.sccms.action.classPackage.AddPackageAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		
+		<action name="checkPackageCategory" class="com.changh.sccms.action.classPackage.CheckAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="packageCategoryAdd" class="com.changh.sccms.action.classPackage.AddPackageCategoryAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 修改套餐类别 -->
+		<action name="packageCategoryLoad" method="execute" 
+			class="com.changh.sccms.action.classPackage.LoadPackageCategoryAction">
+			<result name="success">/cms/jsp/lesson/modifyPackageCategory.jsp</result>
+		</action>
+		<action name="packageCategoryModify" class="com.changh.sccms.action.classPackage.ModifyPackageCategoryAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 删除套餐类别-->
+		<action name="packageCategoryDelete" class="com.changh.sccms.action.classPackage.DeletePackageCategoryAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 修改具体套餐 -->
+		<action name="classPackageLoad" method="execute" 
+			class="com.changh.sccms.action.classPackage.LoadClassPackageAction">
+			<result name="success">/cms/jsp/lesson/modifyClassPackage.jsp</result>
+		</action>
+		<action name="dealFind" method="execute" 
+			class="com.changh.sccms.action.classPackage.DealFindAction">
+			<result name="success" type="json">
+				 <param name="root">dealName</param>
+			</result>
+		</action>
+		<action name="classPackageModify" class="com.changh.sccms.action.classPackage.ModifyClassPackageAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 删除具体套餐 -->
+		<action name="classPackageDelete" class="com.changh.sccms.action.classPackage.DeleteClassPackageAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- loadDeal -->
+		<action name="loadDeal" method="execute" 
+			class="com.changh.sccms.action.classPackage.LoadDealAction">
+			<result name="success">/cms/jsp/lesson/deal.jsp</result>
+		</action>
+		<!-- 上传图片 -->
+		<action name="uploadFile" class="com.changh.sccms.action.classPackage.UploadAction">
+			<param name="savePath">/main/images</param>
+		</action>
+		<!-- 修改图片 -->
+		<action name="updateImage" class="com.changh.sccms.action.classPackage.ModifyImageAction">
+			<param name="savePath">/main/images</param>
+		</action>
+		
+		 	<!-- 定义学习卡相关操作的action -->
+ 		<!-- 列表 -->
+ 		<action name="cardList" class="com.changh.sccms.action.lessonCard.ListAction">
+ 			<result name="success" type="json">
+ 				<param name="root">cardList</param>
+ 			</result>
+ 		</action>
+ 		<!--按id搜索-->
+ 		<action name="searchCard" class="com.changh.sccms.action.lessonCard.SearchAction">
+ 			<result name="success" type="json">
+ 				<param name="root">cardList</param>
+ 			</result>
+ 		</action>
+ 		<!--  -->
+ 		<action name="createCards" class="com.changh.sccms.action.lessonCard.CreateAction">
+ 			<result name="success">
+ 				/cms/jsp/system/lessonCardList.jsp
+ 			</result>
+ 		</action>
+ 		<!-- 直接生成导出 -->
+ 		<action name="excel" class="com.changh.sccms.action.lessonCard.CardExcelAction">   
+            <result name="success" type="stream">   
+                <param name="contentType">application/vnd.ms-excel   
+                </param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">   
+                    filename="lessonCardList.xls"  
+                </param>   
+                <param name="bufferSize">1024</param>   
+            </result>   
+        </action>   
+        <!-- 搜索导出 -->
+        <action name="export" class="com.changh.sccms.action.lessonCard.ExcelExportAction">   
+            <result name="success" type="stream">   
+                <param name="contentType">application/vnd.ms-excel   
+                </param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">   
+                    filename="cardList.xls"  
+                </param>   
+                <param name="bufferSize">1024</param>   
+            </result>
+            <result name="success1">
+            	/cms/jsp/system/exportCardError.jsp
+            </result>   
+        </action>
+        <!-- 选课 -->
+		<action name="chooseClass" class="com.changh.sccms.action.lessonCard.ChooseClassFirstAction">
+			<result name="success">/cms/jsp/system/chooseClass.jsp</result>
+		</action>   
+ 	</package>
+ </struts>

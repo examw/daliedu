@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="member" namespace="/member" 
+ 			extends="eschool-default">
+ 			
+ 		<global-results>
+			<result name="error">/error/error.jsp</result> 
+		</global-results>
+ 		<action name="center" class="">
+ 			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/member.jsp</result>
+		</action>
+		<action name="lessionList" class="com.changh.eschool.action.member.LessionAction">
+			<result name="success">/memberCenter/grade.jsp</result>
+		</action>
+		<action name="myLessons" class="com.changh.eschool.action.member.MyLessonsAction">
+			<result name="success">/memberCenter/myLesson.jsp</result>
+		</action>
+		<action name="noPayLessons" class="com.changh.eschool.action.member.NoPayLessonsAction">
+			<result name="success">/memberCenter/NoPayLesson.jsp</result>
+		</action>
+		<action name="overLessons" class="com.changh.eschool.action.member.OverLessonsAction">
+			<result name="success">/memberCenter/overlesson.jsp</result>
+		</action>
+		<action name="myClass" class="com.changh.eschool.action.member.MyClassAction">
+			<result name="success">/memberCenter/myClass.jsp</result>
+		</action>
+		<action name="myLessonsWork" class="com.changh.eschool.action.member.MyLessonsAction">
+			<result name="success">/memberCenter/myLessonWork.jsp</result>
+		</action>
+		<action name="lessonExam" class="com.changh.eschool.action.member.MyLessonsAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/lessonExam.jsp</result>
+		</action>
+		<!-- 删除item -->
+		<action name="deleteItem" class="com.changh.eschool.action.member.DeleteItemAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 讲义action -->
+		<action name="lectureList" class="com.changh.eschool.action.member.LectureListAction">
+			<result name="success">/memberCenter/lecture.jsp</result>
+		</action>
+		<!-- 我的课堂 -->
+		<action name="classroom" class="com.changh.eschool.action.member.ClassroomAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			 <!-- <result name="success">/main/play.jsp</result>  -->
+			  <result name="success">/memberCenter/mp4Player.jsp</result>
+			  <result name="success1">/memberCenter/limitClass.jsp</result>
+			<!-- 	<result name="success" type="json">
+ 				<param name="root">classDetail</param>
+ 				</result> --> 
+		</action>
+		
+		<action name="classroomHD" class="com.changh.eschool.action.member.ClassRoomHdAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			  <result name="success">/main/hdplayer.jsp</result>  
+			  <result name="success1">/memberCenter/limitClass.jsp</result>
+			  <result name="success2">/memberCenter/limitClass2.jsp</result>
+			 <!--  <result name="success">/memberCenter/mp4Player.jsp</result> -->
+			<!-- 	<result name="success" type="json">
+ 				<param name="root">classDetail</param>
+ 				</result> --> 
+		</action>
+		<!-- 学习记录 -->
+		<action name="studyInfo" class="com.changh.eschool.action.course.RecordListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			 <result name="success">/memberCenter/studyInfo.jsp</result> 
+		</action>
+		<!-- 目录 -->
+		<action name="contents" class="com.changh.eschool.action.member.ContentAction">
+			<result name="success" type="json">
+ 				<param name="root">classDetail</param>
+ 			</result> 
+		</action>
+		<!-- json输出讲义基本信息 -->
+		<action name="partArray" class="com.changh.eschool.action.member.PartArrayAction">	
+			<result name="success" type="json">
+ 				<param name="root">partArray</param>
+ 			</result>
+		</action>
+		<!-- 修改基本信息 -->
+		<action name="modifyBaseInfo" class="com.changh.eschool.action.user.ModifyBaseInfoAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 上传图片 -->
+		<action name="upload" 
+ 			class="com.changh.eschool.action.member.UploadAction">
+ 			<interceptor-ref name="userLoginStack"></interceptor-ref>
+ 			<result name="success">/memberCenter/cutface.jsp</result>
+ 			<result name="input">/memberCenter/pastsize.jsp</result>
+ 			<result name="userLoginFail">/memberCenter/face.jsp</result>
+ 		</action>
+		<!-- 修改学员图像地址 -->
+		<action name="changeFace" class="com.changh.eschool.action.member.ChangeFaceAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 修改密码 -->
+		<action name="modifyPwd" class="com.changh.eschool.action.user.ModifyPwdAction">
+		<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+ 				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 收货地址 -->
+		<action name="addressList" class="com.changh.eschool.action.user.AddressListAction">
+		<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/address.jsp
+ 			</result>
+ 			<result name="success2" type='json'>
+				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 检测是否有寄送单没有填写送货地址 -->
+		<action name="checkIsSendNoAddr" class="com.changh.eschool.action.member.CheckIsSendNoAddressAction">
+			<result name="success" type='json'>
+				<param name="root">send</param>
+			</result>
+		</action>
+		<!-- 填送货地址1 -->
+		<action name="loadAddrForSend" class="com.changh.eschool.action.member.LoadAddressForSendAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/chooseAddress.jsp
+ 			</result>
+		</action>
+		<!-- 送货地址入库 -->
+		<action name="addAddrForSend" class="com.changh.eschool.action.member.AddAddressForSend">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 设置默认地址 -->
+		<action name="setDefaultAddr" class="com.changh.eschool.action.user.SetDefaultAddrAction">
+			<result name="success" type='json'>
+				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 订单查询 -->
+		<action name="orderList" class="com.changh.eschool.action.member.OrderListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/orderSearch.jsp</result>
+		</action>
+		<!-- 订单详情 -->
+		<action name="itemList" class="com.changh.eschool.action.member.ItemListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type='json'>
+				<param name="root">itemList</param>
+ 			</result>
+		</action>
+		<!-- 支付订单，判断是否过期 -->
+		<action name="payOrder" class="com.changh.eschool.action.member.PayOrderAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type='json'>
+				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 取消订单 -->
+		<action name="delOrder" class="com.changh.eschool.action.member.DeleteOrderAction">
+			<result name="success" type='json'>
+				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 搜索订单 -->
+		<action name="searchOrder" class="com.changh.eschool.action.member.SearchOrderAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/orderSearch.jsp
+ 			</result>
+		</action>
+		<!-- 学习卡充值 -->
+		<action name="recharge" class="com.changh.eschool.action.member.RechargeAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="root">data</param>
+ 			</result>
+		</action>
+		<!-- 现金充值 -->
+		<action name="prepareRecharge" class="com.changh.eschool.action.member.PrepareRechargeAction">
+			<result name="zfb_success">/pay/alipay/alipayto.jsp</result>
+			<result name="wy_success">/pay/chinabank/Send.jsp</result>
+				<result name="cft_success">/pay/tenpay/payRequest.jsp</result>
+		</action>
+		<!-- 充值记录1 -->
+		<action name="recordList" class="com.changh.eschool.action.member.RecordListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" >/memberCenter/rechargeRecord.jsp
+ 			</result>
+		</action>
+		<action name="tradeList" class="com.changh.eschool.action.member.TradeListForStuAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" >/memberCenter/rechargeRecord.jsp
+ 			</result>
+		</action>
+		<action name="findCardBalance" class="com.changh.eschool.action.member.FindCardBalanceAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="root">card</param>
+			</result>
+		</action>
+		<!-- 我的投诉 -->
+		<action name="complainList" class="com.changh.eschool.action.member.ComlainListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" >
+				/memberCenter/myComplain.jsp
+ 			</result>
+		</action>
+		<!-- 我的咨询 -->
+		<action name="askList" class="com.changh.eschool.action.member.AskListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" >
+				/memberCenter/myAsk.jsp
+ 			</result>
+		</action>
+		<!-- 我要咨询或投诉 -->
+		<action name="addAskOrComp" class="com.changh.eschool.action.member.AddComplainAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 投诉详细 -->
+		<action name="complainDetail" class="com.changh.eschool.action.member.LoadComplainAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" >
+				/memberCenter/complainDetail.jsp
+ 			</result>
+		</action>
+		<!-- 加载咨询回复 -->
+		<action name="loadReply" class="com.changh.eschool.action.member.LoadReplyAction">
+			<result name="success" type="json">
+				<param name="root">msg</param>
+ 			</result>
+		</action>
+		<!-- 所有答疑问题 -->
+		<action name="allQuestion" class="com.changh.eschool.action.member.AllQuestionAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">
+				/memberCenter/newQuestion.jsp
+ 			</result>
+		</action>
+		<!-- 单个学员答疑问题 -->
+		<action name="myQuestion" class="com.changh.eschool.action.member.MyQuestionAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">
+				/memberCenter/myQuestion.jsp
+ 			</result>
+		</action>
+		<!-- 单个学员答疑收藏 -->
+		<action name="myQuestionCollect" class="com.changh.eschool.action.member.QuestionCollectListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">
+				/memberCenter/favQuestion.jsp
+ 			</result>
+		</action>
+			<!-- 删除个人的答疑问题 -->
+		<action name="delQuestion" class="com.changh.eschool.action.member.DeleteQuestionAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+ 			</result>
+		</action>
+		<!-- 提问时加载已开通课程的考试小类 以及班级 -->
+		<action name="getExam" class="com.changh.eschool.action.member.GetExamCategoryAction">
+			<result name="success" type="json">
+				<param name="root">list</param>
+ 			</result>
+		</action>
+		<action name="getGrade" class="com.changh.eschool.action.member.GetGradeAction">
+			<result name="success" type="json">
+				<param name="root">gradeList</param>
+ 			</result>
+		</action>
+		<action name="getClassDetail" class="com.changh.eschool.action.member.GetClassDetail">
+			<result name="success" type="json">
+				<param name="root">list</param>
+ 			</result>
+		</action>
+		<!-- 我要提问 -->
+		<action name="addQuestion" class="com.changh.eschool.action.member.AddQuestionAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json"><param name="root">ok</param></result>
+		</action>
+		
+		<!-- 我的协议 -->
+		<action name="myAgreement" class="com.changh.eschool.action.member.MyAgreementAction">
+			<result name="success">
+				/memberCenter/myagreement.jsp
+ 			</result>
+		</action>
+		<!-- 某班级下所有试卷 -->
+		<action name="paperList" class="com.changh.eschool.action.paper.PaperListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/examPapers.jsp</result>
+		</action>
+		<!-- 考试记录 -->
+		<action name="examRecordList" class="com.changh.eschool.action.paper.ExamRecordListAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/examRecordList.jsp</result>
+		</action>
+		<!-- 加载试卷 -->
+		<action name="loadPaper" class="com.changh.eschool.action.paper.LoadPaperAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="showPaper">/memberCenter/paper.jsp</result>
+			<result name="showResult">/memberCenter/examResult.jsp</result>
+		</action>
+		<!-- show paper -->
+		<action name="showPaper" method="execute"
+			class="com.changh.eschool.action.paper.LoadPaperAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="showPaper">/memberCenter/paper.jsp</result>
+		</action>
+		<action name="qListOfRule" method="execute"
+			class="com.changh.eschool.action.paper.QuestionListOfRuleAction">
+			<result name="success">/memberCenter/eachProblem.jsp</result>
+		</action>
+		<action name="qListOfRule2" method="execute"
+			class="com.changh.eschool.action.paper.QuestionListOfRuleWithAnswerAction">
+			<result name="success">/memberCenter/eachProblemWithAnswer.jsp</result>
+		</action>
+		<!-- 保存答案 -->
+		<action name="saveAnswer" method="execute" class="com.changh.eschool.action.paper.SaveAnswerAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<!-- 提交试卷 -->
+		<action name="submitPaper" method="execute"
+			class="com.changh.eschool.action.paper.SubmitPaperAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/examResult.jsp</result>
+			<result name="success1">/memberCenter/manualMark.jsp</result>
+		</action>
+		<!-- 自评分提交 -->
+		<action name="manualMark" method="execute" class="com.changh.eschool.action.paper.ManualMarkAction">
+			<result name="success">/memberCenter/examResult.jsp</result>
+		</action>
+		<!-- 成绩排行 -->
+		<action name="showRank" class="com.changh.eschool.action.paper.ScoreRankAction">
+			<result name="success">/memberCenter/scoreRank.jsp</result>
+		</action>
+		<action name="submitError" class="com.changh.eschool.action.paper.SubmitErrorAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="keepConnection" class="com.changh.eschool.action.paper.KeepConnectionAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		
+		<action name = "addNewQuestion" class="com.changh.eschool.action.member.AddNewQuestionAction">
+ 			<result name="success">/memberCenter/addQuestion.jsp</result>	
+ 		</action>
+		<!-- <action name="" class="">
+			<result name="success"></result>
+		</action>	 -->	
+		<action name="newsList" class="com.changh.eschool.action.system.NewsListAction">
+			<result name="success" type="json">
+				<param name="root">map</param></result>
+		</action>
+		<action name="news" class="com.changh.eschool.action.system.SingleNewsAction">
+			<result name="success">/memberCenter/news.jsp</result>
+		</action>
+		
+		<!-- 补课卡充值 -->
+		<action name="lessonRecharge" class="com.changh.eschool.action.member.LessonRechargeAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success" type="json">
+				<param name="root">data</param>
+ 			</result>
+		</action>
+		
+		<!-- 课程中心 -->
+		<action name="courseCenter" class="com.changh.eschool.action.exam.TreeAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			<result name="success">/memberCenter/courseCenter.jsp</result>
+		</action>
+		
+		<!-- 附件下载 -->
+		<action name="dataDownload" class="com.changh.eschool.action.member.DataDownloadAction">
+			<interceptor-ref name="userLoginStack"></interceptor-ref>
+			 <result name="success" type="stream">   
+                <param name="contentType">${contentType}</param>   
+               <param name="inputName">inputStream</param>   
+                <param name="contentDisposition">filename=${fileName}</param>   
+                <param name="bufferSize">1024</param>   
+            </result>   
+		</action>
+		
+		<action name="keepOnline" class="com.changh.eschool.action.member.KeepOnlineAction">
+		</action>
+ 	</package>
+</struts>

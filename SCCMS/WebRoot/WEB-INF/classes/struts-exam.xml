@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="exam" namespace="/exam" 
+ 			extends="sccms-default">
+ 			<!-- 定义考试树的Action -->
+ 		<action name="examTree" class="com.changh.sccms.action.exam.TreeAction">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		<action name="loadExam" class="com.changh.sccms.action.exam.LoadExamCategoryAction">
+ 			<result>/cms/jsp/lesson/modifyExamCategory.jsp </result>
+ 		</action>
+ 		<!-- 定义课程管理模块的Action -->
+ 		<action name="examList" method="execute" 
+			class="com.changh.sccms.action.exam.ListAction">
+			<result name="success" type="json">
+				 <param name="root">exam</param>
+			</result>
+		</action>
+		<!-- test -->
+		<action name="examList1" method="execute" 
+			class="com.changh.sccms.action.exam.ExamListAction">
+			<result name="success" type="json">
+				 <param name="root">examCategory</param>
+			</result>
+		</action>
+		<action name="checkExam" class="com.changh.sccms.action.exam.CheckAddAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="examAdd" class="com.changh.sccms.action.exam.InsertAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="examDelete" class="com.changh.sccms.action.exam.DeleteAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action>
+		<action name="examUpdate" class="com.changh.sccms.action.exam.ModifyAction">
+			<result name="success" type="json">
+				<param name="root">ok</param>
+			</result>
+		</action> 
+		<!-- 按照父id查找班级，套餐模块需求 -->
+		<action name="examChildren" method="execute" 
+			class="com.changh.sccms.action.exam.ExamChildrenAction">
+			<result name="success" type="json">
+				 <param name="root">examMap</param>
+			</result>
+		</action>
+		<!--定义班级管理模块-->
+		<action name="gradeList" method="execute" 
+			class="com.changh.sccms.action.grade.ListAction">
+			<result name="success" type="json">
+				 <param name="root">gradeMap</param>
+			</result>
+			<!-- 用于试卷加载班级 -->
+			<result name="success1" type="json">
+				 <param name="root">gradeList</param>
+			</result>
+		</action>
+		<action name="classTeacher" class="com.changh.sccms.action.grade.TeacherAction">
+			<result name="success" type="json">
+				<param name="root">listTeacher</param>
+			</result>
+		</action>	
+ 	</package>
+ </struts>

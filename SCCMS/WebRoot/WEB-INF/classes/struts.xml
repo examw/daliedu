@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<constant name="struts.multipart.maxSize" value="1024000000" />
+ 	<!-- 加载各个模块的配置文件 -->
+ 	<include file="struts-grade.xml"/>
+ 	<include file="struts-user.xml"/>
+ 	<include file="struts-exam.xml"/>
+ 	<include file="struts-system.xml"/>
+ 	<include file="struts-send.xml"/>
+ 	<include file="struts-package.xml"/>
+ 	<include file="struts-order.xml"/>
+ 	<include file="struts-trade.xml"/>
+ 	<include file="struts-complain.xml"/>
+ 	<include file="struts-paper.xml"/>
+ 	<include file="struts-release.xml"/>
+ 	<include file="struts-new.xml"/>
+	<include file="struts-news.xml"/>
+ 	<!-- 定义工程底层的package -->
+ 	<package name="sccms-default" namespace="/" 
+ 			extends="json-default">
+ 			<!-- <action name="login" class="">
+ 				<result name="">/cms/login.jsp</result>
+ 			</action> -->
+ 			<!--定义拦截器
+ 			<interceptors>
+ 			<interceptor name="transaction" 
+ 			class="com.tarena.dang.interceptor.TransactionInterceptor"/>
+ 		
+ 			<interceptor-stack name="transactionStack">
+ 				<interceptor-ref name="transaction"/>
+ 				<interceptor-ref name="defaultStack"/>
+ 			</interceptor-stack>
+ 		</interceptors> -->
+ 			
+ 		<!-- 将transactionStack指定为默认调用的拦截器
+ 		从dang-default包中及其子包中定义Action默认都调用
+ 		transactionStack
+ 		 -->	
+ 	<!-- 	<default-interceptor-ref name="transactionStack"/> -->
+ 		
+ 		 	<!-- 定义全局的result -->
+	 	
+	 	<global-results>
+	 	 	<result name="error2" >/cms/error.jsp</result> 
+	 	</global-results>
+	 	
+	 	<!-- 异常处理,将框架捕获的异常调用指定result处理 --> 	
+	 	<!-- <global-exception-mappings>
+	  		<exception-mapping result="error" exception="java.lang.Exception">
+	 		</exception-mapping> 
+	 	</global-exception-mappings> -->
+	</package>
+ </struts>

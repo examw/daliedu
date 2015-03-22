@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:tx="http://www.springframework.org/schema/tx" 
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"	
+		>
+	<!-- 配置数据源 -->
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location">
+            <value>classpath:init.properties</value>
+        </property>
+    </bean>
+	<bean id="dataSource" 
+		class="org.apache.commons.dbcp.BasicDataSource">
+    	<property name="driverClassName">
+            <value>${datasource.driverClassName}</value>
+        </property>
+        <property name="url">
+            <value>${datasource.url}</value>
+        </property>
+        <property name="username">
+            <value>${datasource.username}</value>
+        </property>
+        <property name="password">
+            <value>${datasource.password}</value>
+        </property>
+        <property name="maxActive">
+         	<value>${c3p0.maxActive}</value>
+		</property>
+		<!-- 最大等待数 -->  
+    	<property name="maxIdle" >
+    		 <value>${c3p0.maxIdle}</value>
+    	</property>  
+    	<!-- 最大等待时间 单位毫秒 -->
+    	<property name="maxWait" >
+    		 <value>${c3p0.maxWait}</value>
+    	</property>  
+    	<!-- 初始化大小 -->
+    	<property name="initialSize">
+    		 <value>${c3p0.initialSize}</value>
+    	</property> 
+	</bean>
+	<!-- 初始化持久层 -->
+	<bean id="sessionFactory" 
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 数据源 -->
+		<property name="dataSource" ref="dataSource">
+		</property>
+		<!-- hibernate属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<!-- 采用自定义方言 -->
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.jdbc.fetch_size">${hibernate.jdbc.fetch_size}</prop>
+                <prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+                <prop key="hibernate.connection.release_mode">after_transaction</prop>
+			</props>
+		</property>
+		<!-- <property name="mappingResources">
+			<list>
+				<value>com/changh/sccms/entity/Student.hbm.xml</value>
+				<value>com/changh/sccms/entity/Teacher.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamCategory.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamCategory1.hbm.xml</value>
+				<value>com/changh/sccms/entity/Grade.hbm.xml</value>
+				<value>com/changh/sccms/entity/Grade1.hbm.xml</value>
+				<value>com/changh/sccms/entity/GradeCategory.hbm.xml</value>
+				<value>com/changh/sccms/entity/Administrator.hbm.xml</value>
+				<value>com/changh/sccms/entity/Send.hbm.xml</value>
+				<value>com/changh/sccms/entity/Order.hbm.xml</value>
+				<value>com/changh/sccms/entity/Items.hbm.xml</value>
+				<value>com/changh/sccms/entity/StudyCard.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExpressCompany.hbm.xml</value>
+				<value>com/changh/sccms/entity/ClassDetail.hbm.xml</value>
+				<value>com/changh/sccms/entity/Lecture.hbm.xml</value>
+				<value>com/changh/sccms/entity/ClassPackage.hbm.xml</value>
+				<value>com/changh/sccms/entity/PackageCategory.hbm.xml</value>
+				<value>com/changh/sccms/entity/ClassPackageGrade.hbm.xml</value>
+				<value>com/changh/sccms/entity/Deal.hbm.xml</value>
+				<value>com/changh/sccms/entity/Question.hbm.xml</value>
+				<value>com/changh/sccms/entity/Answer.hbm.xml</value>
+				<value>com/changh/sccms/entity/Address.hbm.xml</value>
+				<value>com/changh/sccms/entity/QuestionCollect.hbm.xml</value>
+				<value>com/changh/sccms/entity/Trade.hbm.xml</value>
+				<value>com/changh/sccms/entity/AskOrComplain.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamPaper.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamQuestion.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamRule.hbm.xml</value>
+				<value>com/changh/sccms/entity/Menu.hbm.xml</value>
+				<value>com/changh/sccms/entity/Role.hbm.xml</value>
+				<value>com/changh/sccms/entity/WebInfo.hbm.xml</value>
+				<value>com/changh/sccms/entity/Reply.hbm.xml</value>
+				<value>com/changh/sccms/entity/Log.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamQuestionError.hbm.xml</value>
+				<value>com/changh/sccms/entity/StudyRecord.hbm.xml</value>
+				<value>com/changh/sccms/entity/ExamRecord.hbm.xml</value>
+				<value>com/changh/sccms/entity/Comment.hbm.xml</value>
+				<value>com/changh/sccms/entity/NewClass.hbm.xml</value>	
+				<value>com/changh/sccms/entity/News.hbm.xml</value>
+				<value>com/changh/sccms/entity/Province.hbm.xml</value>
+				
+			</list> 
+			</property>
+			-->
+			<property name="mappingLocations">
+			<list>
+				<value>classpath:/com/changh/sccms/entity/*.hbm.xml</value>
+			</list>
+			</property>
+	</bean>
+		<!-- 声明式事务 -->
+   	<bean id="txtManager" 
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	<!-- 定义一个通知,指定事务管理规则 注意要有tx的schema -->
+	<tx:advice id="txtAdvice" transaction-manager="txtManager">
+		<tx:attributes>
+			<tx:method name="delete*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="save*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="add*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="create*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="update*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="cancel*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="modify*" propagation="REQUIRED" rollback-for="Exception"/>
+			<tx:method name="*" read-only="true" propagation="NOT_SUPPORTED"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 采用AOP方式将txtAdvice切入到service组件上 -->
+	<aop:config>
+		<!-- 定义切入点,将service组件指定为目标对象 -->
+		<aop:pointcut id="servicePointcut" 
+			expression="execution(* com.changh.sccms.service..*.*(..)))"/>
+		<!-- 将txtAdvice和切入点相结合 -->
+		<aop:advisor advice-ref="txtAdvice" 
+			pointcut-ref="servicePointcut"/>
+	</aop:config>
+	
+	<!-- aop日志 -->
+	<!-- <bean id="log4jHandlerAOP" class="com.changh.sccms.log.Log4jHandlerAOP"></bean>
+    <aop:config>
+        <aop:aspect id="logAspect" ref="log4jHandlerAOP">
+            <aop:pointcut id="logPointCut" expression="within(com.changh.sccms.service.impl.*)" />
+            <aop:around method="mylogger" pointcut-ref="logPointCut" />
+        </aop:aspect>
+    </aop:config> -->
+    <bean id="teacherDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateTeacherDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+	    <bean id="sendDao" scope="prototype" class="com.changh.sccms.dao.impl.HibernateSendDAO">
+		<property name="sessionFactory" ref="sessionFactory">
+		</property>
+	</bean>
+</beans>

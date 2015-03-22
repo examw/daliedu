@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>网校！</title>
+<META name="ROBOTS" content="All" />
+<link rel="stylesheet" type="text/css" href="images/shop.css">
+    <script src="http://img.233.com/wx/js/jquery-1.7.1.min.js?v=2012060301" type="text/javascript"></script>
+</head>
+<body>
+    <script type="text/javascript">
+    //支付方式切换
+ 	$(function(){
+ 		//$("div.buyPay_con:gt(0)").hide();
+ 	 $("ul.buyPayTit li").click(function() {
+ 	    	var value = $(this).attr("id");
+ 	        $(this).addClass("current").siblings("li").removeClass("current");
+ 			$("div.buyPay_con:eq("+$("ul.buyPayTit li").index(this)+")").show().siblings("div.buyPay_con").hide();
+ 	    });
+ 	});
+    </script>
+<div class="top">
+  <div class="harder">
+    <div class="logo"><a href=""><img src="images/logo.png" alt="雄鹰网校"/></a></div>
+    
+    <div class="login"> <a href="" target="_blank"><img src="images/zhuce.gif"/></a> 　<a href="" target="_blank"><img src="images/denglu.gif"/></a> </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+
+<div id="wapper">
+        <div class="cont">
+            <div class="bmlc">
+                <ul class="lct lct2">
+                    <li>购课车</li>
+                    <li class="on">生成订单</li>
+                    <li>付款</li>
+                    <li>完成</li>
+                </ul>
+            </div>
+            <div class="bmqd">
+                <div class="title" id="title_ke">
+                    <span class="flt2">商品清单</span></div>
+                <div class="kclist">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center" class="ca_tab3">
+                        <tbody>                                                       
+                        <tr style="display: none;" id="load" class="shoplist"><td colspan="5" align="left"><img src="http://img.233.com/wx/artDialog/skins/icons/loading.blue.gif"></td></tr><tr><th height="34" width="427">课程名称</th><th width="136">原价</th><th width="129">现价</th><th width="106">立即节省</th><th width="83">操作</th></tr> <tr class="shoplist"><td align="center"><a class="noday7" href="javascript:;">全科VIP保过班(建筑工程+三门公共课)（送教材）</a></td><td align="center"><s><strong>￥</strong>4000</s></td><td align="center"><span class="tc1"><strong id="couse_price_9581">￥2100</strong></span></td><td align="center">1900.00元</td><td align="center" width="72">未付款</td></tr></tbody>
+                    </table>
+              </div>  
+              <div class="total_info">
+                        <div class="checkout">
+                            xxxxx，您已完成报名！请记下您的订单号为：<strong>20130202219776</strong></div>
+                    <div class="row_price">
+                            您共购买<b>1</b>门课程，总计：<strong>580</strong>元</div>
+                    </div>  
+            <br clear="all">
+              <div class="title" id="title_hang"><span class="flt2" >请选择支付方式</span></div>
+        </div>
+    <div class="buyPay">
+    <ul class="buyPayTit">
+      <li class="current" id="paytab1">网上支付</li>
+      <li id="paytab2">快捷支付</li>
+      <li id="paytab3">银行汇款</li>
+    </ul>
+    <!--网上支付 start-->
+  	<div class="buyPay_con">
+ 	  			<div id="bank_divzfb" style="display: none;">
+					<form action="http://import.highso.org.cn/alipay/zfb!goToZFB.action" name="ZFForm" id="ZFForm" method="post" target="_blank">
+						<div id="oderid" style="display: none"></div>
+						<input id="ode" name="get_order" type="hidden" value="" />
+						<input id="jinee" name="total_fee" type="hidden" value="" />
+						<input id="isUse" name="isUse" type="hidden" value="false" />
+						<input id="cPrice" name="cPrice" type="hidden" value="0" />
+						<input id="zfSerialNumber" name="zfSerialNumber" type="hidden" />
+					</form>
+				</div>
+				<!-- 支付宝参数 END // -->
+				<!-- 网银在线参数 START -->
+				<div style="display:none" id="bank_divch">
+				<form name="BKForm" id="BKForm" method="post" target="_blank">
+					<input id="chinaBankOid" name="chinaBankInfo.v_oid" type="hidden"/> 
+				</form>
+				</div>
+				
+				<!-- 银联在线参数 -->
+				<div style="display:none" id="bank_divun">
+				<form name="UnionPayForm" id="UnionPayForm" method="post" target="_blank">
+					<input id="unionPayOid" name="upInfo.orderNumber" type="hidden"/> 
+				</form>
+				</div>
+				<div style="display:none" id="bank_divkq">
+				<!-- 快钱参数 -->
+				<form name="KQForm" id="KQForm" method="post" target="_blank">
+					<input id="KQOrderId" name="kQInfo.orderId" type="hidden"/>
+					<input id="KQPayType" name="kQInfo.payType" type="hidden" value="00"/>
+					<input id="KQBankType" name="kQInfo.bankId" type="hidden" value="ICBC"/> 
+				</form>
+				<!--快钱参数 -->
+				</div>
+				
+      <h5 class="bor1"><span class="fb f14">网上银行</span>（需要开通网上银行，支持绝大多数银行）</h5>
+      <ul class="buyB_payPlat">
+          <li><input type="radio" value="ICBC" name="kQInfo.bankId" onclick="check_kqbank(0)" id="default_kq" checked="checked"><img alt="工商" src="http://import.highso.org.cn/images/web/public/buy/wal_bank07_gongShang.jpg"></li>
+          <li><input type="radio" value="CCB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="建设" src="http://import.highso.org.cn/images/web/public/buy/wal_bank08_jianshe.jpg"></li>
+          <li><input type="radio" value="BOC" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="中国银行" src="http://import.highso.org.cn/images/web/public/buy/wal_bank10_zhongGuo.jpg"></li>
+          <li><input type="radio" value="CMB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="招商" src="http://import.highso.org.cn/images/web/public/buy/wal_bank06_zhaoShang.jpg"></li>
+          <li><input type="radio" value="BCOM" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="交通银行" src="http://import.highso.org.cn/images/web/public/buy/wal_bank05_jaotong.jpg"></li>
+          <li><input type="radio" value="ABC" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="农业" src="http://import.highso.org.cn/images/web/public/buy/wal_bank09_nongYe.jpg"></li>
+          <li><input type="radio" value="CIB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="兴业" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_xingYe.jpg"></li>
+          <li><input type="radio" value="CMBC" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="民生" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_minSheng.jpg"></li>
+          <li><input type="radio" value="BOB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="北京" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_beiJIng.jpg"></li>
+          <li><input type="radio" value="CITIC" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="中信" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_zhongXin.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="GDB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="广发" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_guangFa.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="CEB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="光大" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_guangDa.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="HXB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="华夏" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_huaXa.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="NJCB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="南京" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_nanjing.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="CBHB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="渤海" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_boHai.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="BEA" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="东亚" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_dongYa.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="SPDB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="浦发" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_fuFa.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="SDB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="深发" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_shenFa.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="BJRCB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="北京农商" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_beiNongShang.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="POST" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="邮政" src="http://import.highso.org.cn/images/web/public/buy/wal_bank04_youZheng.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="SHRCC" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="上海" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_shanghai.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="GZRCC" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="农村信用社" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_xinYongShe.jpg"></li>
+          <li class="buyB_payPlatNone"><input type="radio" value="GZCB" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="广州" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_guangZhou.jpg"></li>
+          <li class="buyB_bankMoreClick1B"><a class="buyB_bankMoreClick1"><span class="buyB_icon03"></span>更多银行请点击</a></li>
+          <li style="display:none;" class="buyB_bankMoreClick2B"><a class="buyB_bankMoreClick2"><span class="buyB_icon03_b"></span>收起更多银行请</a></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <!--网上支付 end-->
+    <!--快捷支付 start-->
+  	<div class="buyPay_con" style="display: none;">
+      <h5 class="bor1"><span class="fb f14">无网银有卡用户支付平台</span></h5>
+      <ul class="buyB_payPlat buyB_payPlat2 borderNo">
+          <li><input type="radio" value="" name="unpay" onclick="check_union(0)" id="default_union" ><img alt="在线支付" src="http://import.highso.org.cn/images/web/public/buy/wal_bank01_onlinePay.jpg" ></li>
+          <li><input type="radio" value="credit" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="信用卡" src="http://import.highso.org.cn/images/web/public/buy/wal_bank02_wuWangYin.jpg"></li>
+          <li><input type="radio" value="borrow" name="kQInfo.bankId" onclick="check_kqbank(0)"><img alt="借记卡" src="http://import.highso.org.cn/images/web/public/buy/wal_bank03_jinJi.jpg"></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <!--快捷支付 end-->
+
+    <!--银行汇款 start-->
+  	<div class="buyPay_con" style="display: none;">
+      <h5><input type="radio" value="" name="offline" onclick="check_offline(0)" style="margin-top:5px;" id="default_offline"><span class="fb f14">银行汇款</span>（汇款时请务必填写您的嗨学网用户名及订单号）</h5>
+      <table cellspacing="0" cellpadding="0" border="0" class="buyB_rechTable mtop-5">
+        <tbody><tr>
+            <th>银行名称</th>
+            <th>开户行名称</th>
+            <th>卡号</th>
+            <th>开户名</th>
+          </tr>                       
+          <tr>
+            <td>招商银行</td>
+            <td>招商银行股份有限公司北京首体支行</td>
+            <td>1109 0623 0710 802</td>
+            <td>北京尚仁睿智教育科技有限公司</td>
+          </tr>
+          <tr>
+            <td>中国工商银行</td>
+            <td>工商银行北京东城支行营业室</td>
+            <td>0200 0807 1902 4659 116</td>
+            <td>北京尚仁睿智教育科技有限公司</td>
+          </tr>
+          <!--<tr>
+            <td>中国工商银行</td>
+            <td>海淀西区支行苏州街支行</td>
+            <td>6222 0202 0006 9040 398</td>
+            <td>汪林</td>
+          </tr>-->
+          <tr>
+            <td>中国建设银行</td>
+            <td>中国建设银行股份有限公司北京保利支行</td>
+            <td>1100 1058 9000 5250 9146</td>
+            <td>北京尚仁睿智教育科技有限公司</td>
+          </tr>
+          <!--<tr>
+            <td>中国建设银行</td>
+            <td>东土城路储蓄所</td>
+            <td>6227 0000 1137 0088 460</td>
+            <td>汪林</td>
+          </tr>-->
+          <tr>
+            <td>中国农业银行</td>
+            <td>中国农业银行北京工体路支行</td>
+            <td>1123 0501 0400 05216</td>
+            <td>北京尚仁睿智教育科技有限公司</td>
+          </tr>
+          <!--<tr>
+            <td>中国农业银行</td>
+            <td>北京香河园支行</td>
+            <td>6228 4800 1092 4170 912</td>
+            <td>汪林</td>
+          </tr>-->
+          <tr>
+            <td>交通银行</td>
+            <td>中国交通银行北京市分行东直门支行</td>
+            <td>1100 6043 9018 0100 4591 5</td>
+            <td>北京尚仁睿智教育科技有限公司</td>
+          </tr>
+          <!--<tr>
+            <td>交通银行</td>
+            <td>和平里东街支行</td>
+            <td>6222 6009 1006 6200 328</td>
+            <td>汪林</td>
+          </tr>-->
+          <tr>
+            <td>中国银行</td>
+            <td>中国银行北京东城西坝河南路支行</td>
+            <td>3428 5712 3224</td>
+            <td>北京尚仁睿智教育科技有限公司</td>
+          </tr>
+          <!--<tr>
+            <td>中国邮政储蓄</td>
+            <td>双榆树支行</td>
+            <td>6210 9810 0000 7191 853</td>
+            <td>汪林</td>
+          </tr>-->
+      </tbody></table>
+    </div>
+    <!--银行汇款 end-->
+  </div>
+   <div class="clear"></div>
+   <div id="priceinfo">
+  <div class="buySettle">
+  <div class="title"> <span class="flt2">结算信息</span></div>
+     	<div id="totalDetail">
+	  	<span class="blackBg">商品总格</span>
+	    <span class="fo fa" id="oldmoney"></span>&nbsp;—
+	    <span class="blackBg">减价金额</span>
+	    <span class="fo fa" id="cutprice">￥0.00</span>&nbsp;—
+	    <span class="blackBg" >优惠金额</span>
+	    <span class="fo fa" id="yhmoney"></span>&nbsp;+
+	    <span class="blackBg">运费</span>
+	    <span class="fo fa" id="freight">￥0.00</span>&nbsp;=
+    	<span class="fo fa fb" id="paySumPrice">￥0.00</span>
+    	<span class="fo fa fb" id="paySumPriceRecv" style="display:none">￥0.00</span>
+    	<div class="pt10"><span class="fo f24 fm">应付订单金额：</span><span class="fo fa f28" id="payprice"></span><span class="fo fa f18">1500.00</span></div>
+    </div>
+    <div class="buySubmitBox"><a href="javascript:showPayType()" class="buySubmit" ><font color="#FFFFFF">去结算</font></a></div>
+  </div>
+  </div>
+  
+      <div class="clear"></div>
+      <div class="bottom">
+            <a target="_blank" href="http://www.233.com/about/aboutus.html">关于我们</a> ┊ <a target="_blank" href="http://www.233.com/about/examda_pay.html">付款方式</a> ┊ <a target="_blank" href="/aboutus/hezuo.html">
+                    合作推广</a> ┊ <a target="_blank" href="/aboutus/hzhb.html">合作伙伴</a> ┊ <a target="_blank" href="http://www.233.com/about/connect.html">联系我们</a> ┊ <a target="_blank" href="http://www.233.com/about/jshz.html">
+                            教师合作</a> ┊ <a target="_blank" href="/aboutus/map.html">网站地图</a>
+            ┊ <a target="_blank" href="/aboutus/shengming.html">网站声明</a> ┊ <a target="_blank" href="/aboutus/link.html">友情链接</a> ┊ <a target="_blank" href="/help/">帮助中心</a><br>
+            版权所有 ? 2012 长沙二三三网络科技有限公司 增值电信业务经营许可证：湘B2-20090096
+            <br>
+            咨询时间：全天24小时服务（节假日不休息） 统一客服热线:<strong>4000800233</strong><br>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

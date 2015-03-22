@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="news" namespace="/news" 
+ 			extends="json-default">
+ 			<!-- 定义学员管理模块的Action -->
+ 			
+ 		<action name="newsList" class="com.changh.sccms.action.news.NewsListAction">
+			<result name="success" type="json">
+				 <param name="root">map</param>
+			</result>
+		</action>	
+		<action name="loadNews" class="com.changh.sccms.action.news.LoadNewsAction">
+			<result name="success" >/cms/jsp/news/addNews.jsp
+			</result>
+		</action>	
+		<action name="addOrUpdate" class="com.changh.sccms.action.news.AddOrUpdateNewsAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>
+		<action name="deleteNews" class="com.changh.sccms.action.news.DeleteNewsAction">
+			<result name="success" type="json">
+				 <param name="root">ok</param>
+			</result>
+		</action>		
+ 	</package>
+ </struts>

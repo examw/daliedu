@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<!-- 加载各个模块的配置文件 -->
+ 	<include file="struts-user.xml"/>
+ 	<include file="struts-main.xml"/>
+ 	<include file="struts-cart.xml"/>
+ 	<include file="struts-order.xml"/>
+ 	<include file="struts-member.xml"/>
+ 	<include file="struts-course.xml"/>
+ 	<include file="struts-question.xml"/>
+ 	<include file="struts-system.xml"/>
+ 	<include file="struts-coop.xml"/>
+	<include file="struts-mobile.xml"/>
+ 	<!-- 定义工程底层的package -->
+ 	<package name="eschool-default" 
+ 			extends="json-default">
+ 			<!--定义拦截器-->
+ 			<interceptors>
+ 			<interceptor name="teacherLogin" 
+ 			class="com.changh.eschool.interceptor.TeacherLoginInterceptor"/>
+ 			<interceptor name="userLogin" 
+ 			class="com.changh.eschool.interceptor.UserLoginInterceptor"/>
+ 			<interceptor-stack name="teacherLoginStack">
+ 				<interceptor-ref name="teacherLogin"/>
+ 				<interceptor-ref name="defaultStack"/>
+ 			</interceptor-stack>
+ 			<interceptor-stack name="userLoginStack">
+ 				<interceptor-ref name="userLogin"/>
+ 				<interceptor-ref name="defaultStack"/>
+ 			</interceptor-stack>
+ 		</interceptors> 
+ 			
+ 		<!-- 将transactionStack指定为默认调用的拦截器
+ 		从dang-default包中及其子包中定义Action默认都调用
+ 		transactionStack
+ 		 -->	
+ 	<!-- 	<default-interceptor-ref name="transactionStack"/> -->
+ 		
+ 		 	<!-- 定义全局的result -->
+	  	<global-results>
+			<result name="error">/error/error.jsp</result>
+			<result name="userLoginFail">/user/login.jsp</result> 
+		</global-results>
+	 	<!-- 异常处理,将框架捕获的异常调用指定result处理 -->
+<!-- 	 	<global-exception-mappings>
+	  		<exception-mapping result="error" exception="java.lang.Exception">
+	 		</exception-mapping> 
+	 	</global-exception-mappings> -->
+	</package>
+ </struts>

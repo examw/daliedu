@@ -1,0 +1,72 @@
+@charset "GB2312";
+
+/*公用的头部样式文件*/
+.top{height:60px;background:#ec4f02;}
+.harder{width:1010px;margin:0 auto;}
+.logo{float:left; width:226px;}
+.nav1{width:560px; font-size:14px; height:60px; line-height:60px; float:left;padding-left:25px;}
+.nav1 ul li{float:left; background:url(navxian.gif) no-repeat left center; padding:0 20px; font-weight:bold;}
+.nav1 a{font-size:14px;font-family:"微软雅黑";color:#ffffff;}
+.nav1 a:link,.nav a:actived,.nav a:visited,{color:#ffffff;}
+
+/*公用登陆样式*/
+.login{float:right;padding-top:15px;}
+.logingc{width:auto;height:auto;margin:15px auto;display:none;}
+/*弹出样式*/
+.loglf{ width:auto; height:auto; float:left;font-family:宋体 ;}
+.loglf table td{ height:30px;border-bottom: 0;padding: 0;}
+.zcbn{ width:150px; height:47px; float:left; background:url(st-bg.png) -260px -170px no-repeat;cursor:pointer;font-weight:bold;line-height:40px; color:#FFF; font-size:14px; display:block;font-family:"微软雅黑";}
+.zcbn a:link,.zcbn a:visited{width:150px; height:47px; color:#FFF; background:url(st-bg.png) -260px -169px no-repeat;text-decoration:none;display:block}
+.zcbn a:hover{ color:#fff;background:url(st-bg.png) -260px -219px no-repeat;text-decoration:none;display:block }
+/*输入验证的样式*/
+.box2_putlink{ width:252px; height:34px; background:url(st-bg.png) 0px -210px no-repeat; padding:6px 0 0 5px; }
+.box2_puthover{ width:252px; height:34px;  background:url(st-bg.png) 0px -168px no-repeat; padding:6px 0 0 5px; }
+.box2_input{ width:240px; height:28px; color:#333; font-size:14px;font-family: Verdana;background-color:#fff; border:none; padding:0px 0 0 3px;}
+.countDownBt-active {background: url("../../images/countDownBt_act.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0); border: 0 none;color: #FFFFFF;cursor: pointer;font-weight: 700;height: 29px;width: 99px;}
+
+.line1px{color:#8A8A8A; font-size:12px; }
+.line1px_2{  PADDING-LEFT:20px; background:url(st-bg.png) -418px 0px no-repeat; COLOR: #333;font-size:12px;}
+.line1px_3{	 PADDING-LEFT:20px; background:url(st-bg.png) -418px -30px no-repeat;COLOR: #red;  font-size:12px;}
+.line1px_5{	 PADDING-LEFT:20px; background:url(st-bg.png) -418px -22px no-repeat #FFC;COLOR: #f30; height:32px; line-height:32px;  font-size:12px; border:1px solid #FFC058; width:240px; position:absolute; left:90px; top:10px; z-index:1}
+.line1px_4{	 PADDING-LEFT:20px; background:url(st-bg.png) -418px -56px no-repeat;COLOR: #333; font-size:12px;}
+.lgjg{line-height:60px;}
+.lgjg a{color:#fff;}
+
+
+
+/*顶部公用样式*/
+.gouke{height:196px;background:url(footerbj.gif) repeat-x;margin-top:40px;}
+.goukec{width:1010px;margin:0 auto;padding-top:24px;}
+.liucheng{width:175px;height:172px;float:left;padding-left:20px;}
+.liuchengd{height:172px;float:left;padding-left:20px;}
+.liucheng1{font-size:24px;height:24px;color:#FFF;font-family:Arial;}
+.liucheng ul{padding-top:25px;font-family:"微软雅黑";}
+.liucheng ul li{line-height:26px;font-size:12px;}
+.liucheng ul li a{color:#FFF;}
+.gouksx{width:2px;float:left;}
+.photo{display:inline;height:40px;font-size:24px;line-height:40px;color:#FFF;}
+.time{font-size:14px;font-family:Arial;color:#FFF;}
+.tuikuan{margin-top:8px;}
+
+.footer { width:100%;}
+
+.service { width:960px; margin:0 auto; padding-top:20px; text-align:left; }
+.service span { width:169px; height:125px; margin-right:15px; color:#b6afaf; border-right:1px #625c58 solid; float:left; display:inline; }
+.service span b { font-size:18px; display:block; }
+.service span.end { width:220px; margin-right:0; border:0;}
+.service h3 { font-size:18px; font-family:"微软雅黑"; color:#fff; }
+.service ul { padding-top:7px; }
+.service ul li a:link, .service ul li a:visited, .service ul li a:hover { color:#b6afaf; }
+.service .shangde_weibo{ background:url(shangde_weibo_img.png) no-repeat 0 0;}
+.service .shangde_weibo a{display:block; text-indent:-9999px; height:24px;}
+.webinfo {width:960px; margin:0 auto; padding:30px 0 15px 0; color:#b6afaf; font-family:Arial;}
+.webinfo span { float:right; }
+.webinfo span img { margin-left:50px; }
+.f_btn{ margin-top:5px;}
+
+/*选择框样式*/
+.select_border{height:29px;*background:#fff;background:#fff;*padding:4px;*height:20px;}
+.container{*border:0;*position:relative;*height:18px;*overflow:hidden;}
+.select{border:1px solid #09f;padding:4px 3px;font-size:12px;height:30px;width:245px;*width:52px;margin:-1px;}
+.select option{padding:5px 5px;}
+.select_border,.container {*width:50px;}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+    "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+ <struts>
+ 	<package name="new" namespace="/new" 
+ 			extends="json-default">
+ 			<!-- 定义学员管理模块的Action -->
+ 			
+ 		<action name="newClassList" method="newClassList" 
+			class="com.changh.sccms.action.news.NewClassAction">
+			<result name="success" type="json">
+				 <param name="root">map</param>
+			</result>
+		</action>	
+		<action name="delete" method="delete" 
+			class="com.changh.sccms.action.news.NewClassAction">
+			<result name="success" type="json">
+				 <param name="root">j</param>
+			</result>
+		</action>	
+		<action name="save" method="save" 
+			class="com.changh.sccms.action.news.NewClassAction">
+			<result name="success" type="json">
+				 <param name="root">j</param>
+			</result>
+		</action>	
+		<action name="tree" method="tree" 
+			class="com.changh.sccms.action.news.NewClassAction">
+			<result name="success" type="json">
+				 <param name="root">list</param>
+			</result>
+		</action>	
+		 <action name="getProvince" class="com.changh.sccms.action.news.NewsListAction" method="getProvince">
+ 			<result name="success" type="json">
+ 				<param name="root">obj</param>
+ 			</result>
+ 		</action>
+ 		<action name="getNewClass" class="com.changh.sccms.action.news.NewsListAction" method="getNewClass">
+ 			<result name="success" type="json">
+ 				<param name="root">list</param>
+ 			</result>
+ 		</action>
+ 		<action name="findAll" class="com.changh.sccms.action.news.NewsAction" method="execute">
+ 			<result name="success" type="json">
+ 				<param name="root">gridMap</param>
+ 			</result>
+ 		</action>
+ 		<action name="examList" class="com.changh.sccms.action.news.NewsListAction" method="examList">
+ 			<result name="success" type="json">
+ 				<param name="root">examList</param>
+ 			</result>
+ 		</action>
+ 		<action name="saveNews" class="com.changh.sccms.action.news.NewsAction" method="saveNews">
+ 			<result name="success" type="json">
+				 <param name="root">j</param>
+			</result>
+ 		</action>
+ 		<action name="deleteNews" class="com.changh.sccms.action.news.NewsAction" method="deleteNews">
+ 			<result name="success" type="json">
+				 <param name="root">j</param>
+			</result>
+ 		</action>
+ 		<action name="getNews" class="com.changh.sccms.action.news.NewsAction" method="getNew">
+			<result name="success">/cms/jsp/new/news.jsp</result>
+		</action>
+		<action name="loadNewClass" class="com.changh.sccms.action.news.NewClassAction" method="loadNewClass">
+			<result name="success">/cms/jsp/new/new_class.jsp</result>
+		</action>
+ 		
+		<!--  <action name="studentSelect" method="execute" 
+			class="com.changh.sccms.action.user.student.SelectAction">
+			<result name="success" type="json">
+				 <param name="root">stuMap</param>
+			</result>
+		</action>
+		<action name="studentDelete" class="com.changh.sccms.action.user.student.DeleteAction">
+			<result name="success" type="json">
+ 				<param name="root">map</param>
+ 			</result>
+		</action>-->
+ 	</package>
+ </struts>
